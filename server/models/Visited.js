@@ -33,11 +33,11 @@ const VisitedSchema = new Schema({
     trim: true,
     // required: true,
   },
-//   picture: {
-//     type: String,
-//     trim: true,
-//     // required: true,
-//   },
+  //   picture: {
+  //     type: String,
+  //     trim: true,
+  //     // required: true,
+  //   },
 });
 
 const Visited = model("Visited", VisitedSchema);
