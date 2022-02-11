@@ -11,8 +11,8 @@ const ToVisitSchema = new Schema({
     type: String,
     required: true,
   },
-  dateVisted: {
-    type: String,
+  pricePoint: {
+    type: Number,
     trim: true,
     // required: true,
   },
