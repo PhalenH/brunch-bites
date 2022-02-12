@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ToVisitList = ({ profiles, title }) => {
   if (!profiles.length) {
@@ -8,12 +8,9 @@ const ToVisitList = ({ profiles, title }) => {
 
   return (
     <div>
-      <h3 className="text-primary">{title}</h3>
-      <div className="flex-row justify-space-between my-4">
-        {profiles &&
-          profiles.map((profile) => (
-            <h1>to fill with data</h1>
-          ))}
+      <h3 className="">{title}</h3>
+      <div className="">
+        {profiles && profiles.map((profile) => <h1>to fill with data</h1>)}
       </div>
     </div>
   );
