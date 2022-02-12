@@ -10,6 +10,9 @@ Overall the brunch application will make it easier to find new brunch places as 
 
 
 ## Wireframe or Design for the website
+<img width="315" alt="Landing page" src="https://user-images.githubusercontent.com/89230246/153724675-11f6913e-2812-4d01-9d99-1cce0256852f.PNG">
+<img width="325" alt="Profile Page" src="https://user-images.githubusercontent.com/89230246/153724678-82db39cb-3eaa-488e-baf3-a6cd3d4a66f0.PNG">
+<img width="333" alt="Results Page" src="https://user-images.githubusercontent.com/89230246/153724683-6e2d1647-0663-4a6c-a96c-2ad3500d21e9.PNG">
 
 
 ## List of Tasks or Acceptance Criteria
