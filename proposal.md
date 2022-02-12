@@ -15,17 +15,19 @@ Overall the brunch application will make it easier to find new brunch places as 
 <img width="333" alt="Results Page" src="https://user-images.githubusercontent.com/89230246/153724683-6e2d1647-0663-4a6c-a96c-2ad3500d21e9.PNG">
 
 
+## Resources
+
+- Yelp API
+
 ## List of Tasks or Acceptance Criteria
 
-```
+
 As a user I want to be able view lists of brunch places I want to visit as well as already have visited. I want to search brunch places based on location. I want to be able to view name, address, rating, and price point of each brunch spot. I want to be able to save a brunch spot to my profile for "places to visit" and add a comment if I have one. I want to be able to change a "to visit" location to my "visited" list and be able to add my own rating and comment and it saves the date I visited when doing so. I want to be able to update a "visited" location.
 
 When the user opens the app they have an option to sign in or sign up.
 
 Once logged in to the app the user is able to view their lists and has the ability to search from location from their profile page.
 
-
-```
 
 ## First Task for each member
 
