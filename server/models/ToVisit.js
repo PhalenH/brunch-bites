@@ -12,7 +12,7 @@ const ToVisitSchema = new Schema({
     required: true,
   },
   pricePoint: {
-    type: Number,
+    type: String,
     trim: true,
     // required: true,
   },
