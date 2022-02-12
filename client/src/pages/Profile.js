@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { Redirect, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { Redirect, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 // Import toVisitList and visited component
 
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { profileId } = useParams();
@@ -43,9 +43,7 @@ const Profile = () => {
 
   return (
     <div>
-      <h2 className="card-header">
-        List of brunch spots
-      </h2>
+      <h2 className="">List of brunch spots</h2>
     </div>
   );
 };

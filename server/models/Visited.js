@@ -29,15 +29,15 @@ const VisitedSchema = new Schema({
     // required: true,
   },
   rating: {
-    type: String,
+    type: Number,
     trim: true,
     // required: true,
   },
-  picture: {
-    type: String,
-    trim: true,
-    // required: true,
-  },
+  //   picture: {
+  //     type: String,
+  //     trim: true,
+  //     // required: true,
+  //   },
 });
 
 const Visited = model("Visited", VisitedSchema);

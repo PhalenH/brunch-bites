@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const ToVisitSchema = new Schema({
   name: {
@@ -11,7 +11,7 @@ const ToVisitSchema = new Schema({
     type: String,
     required: true,
   },
-  dateVisted: {
+  pricePoint: {
     type: String,
     trim: true,
     // required: true,
@@ -25,6 +25,6 @@ const ToVisitSchema = new Schema({
   },
 });
 
-const ToVisit = model('ToVisit', ToVisitSchema);
+const ToVisit = model("ToVisit", ToVisitSchema);
 
 module.exports = ToVisit;

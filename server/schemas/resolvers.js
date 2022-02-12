@@ -1,6 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { Profile, ToVist, Visited } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { Profile, ToVist, Visited } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -16,7 +16,7 @@ const resolvers = {
       if (context.user) {
         return Profile.findOne({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 
@@ -27,17 +27,33 @@ const resolvers = {
 
       return { token, profile };
     },
-    login: async (parent, {password }) => {
-
+    login: async (parent, { password }) => {
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
+        throw new AuthenticationError("Incorrect password!");
       }
 
       const token = signToken(profile);
       return { token, profile };
     },
+    // toVisit: async (parent, { name, location, pricePoint }) => {
+    //   const response = await axios({
+    //     method: "get",
+    //     url: `https://api.yelp.com/v3/businesses/search?location=philadelpia`,
+    //     responseType: "json",
+    //     headers: {
+    //       Authorization:
+    //         "Bearer z0VKGJ5saPw9o4NFOXM0ltn74MlNL-ImY3NuRwKqHSBzlro8-FDROabYZfAYjy60-7y8RngCZo3O84AfF9TTLqmlz6geb3b3jG1K3IxXFeAXCfS4QDpDPqpTVaYBYnYx",
+    //     },
+    //   });
+    //   const dataResponse = response.data;
+    //   return {
+    //     name: dataResponse.name,
+    //     location: dataResponse.location,
+    //     pricePoint: dataResponse.pricePoint,
+    //   };
+    // },
   },
 };
 
