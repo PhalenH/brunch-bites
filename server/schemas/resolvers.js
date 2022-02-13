@@ -37,23 +37,26 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
-    // toVisit: async (parent, { name, location, pricePoint }) => {
-    //   const response = await axios({
-    //     method: "get",
-    //     url: `https://api.yelp.com/v3/businesses/search?location=philadelpia`,
-    //     responseType: "json",
-    //     headers: {
-    //       Authorization:
-    //         "Bearer z0VKGJ5saPw9o4NFOXM0ltn74MlNL-ImY3NuRwKqHSBzlro8-FDROabYZfAYjy60-7y8RngCZo3O84AfF9TTLqmlz6geb3b3jG1K3IxXFeAXCfS4QDpDPqpTVaYBYnYx",
-    //     },
-    //   });
-    //   const dataResponse = response.data;
-    //   return {
-    //     name: dataResponse.name,
-    //     location: dataResponse.location,
-    //     pricePoint: dataResponse.pricePoint,
-    //   };
-    // },
+
+    brunchSpot: async (parent, { name, location, price, rating }) => {
+      const response = await axios({
+        method: "get",
+        url: `https://api.yelp.com/v3/businesses/search?location=philadelpia`,
+        responseType: "json",
+        headers: {
+          Authorization:
+          // how do i use my api key as a process.env file here?
+            "Bearer z0VKGJ5saPw9o4NFOXM0ltn74MlNL-ImY3NuRwKqHSBzlro8-FDROabYZfAYjy60-7y8RngCZo3O84AfF9TTLqmlz6geb3b3jG1K3IxXFeAXCfS4QDpDPqpTVaYBYnYx",
+        },
+      });
+      const dataResponse = response.data;
+      return {
+        name: dataResponse.name,
+        location: dataResponse.location,
+        pricePoint: dataResponse.priceP,
+        rating: dataResponse.rating
+      };
+    },
   },
 };
 

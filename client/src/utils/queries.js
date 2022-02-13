@@ -57,14 +57,14 @@ export const QUERY_ME = gql`
   }
 `;
 
-// export const QUERY_TOVISIT = gql`
-//   query toVisit {
-//     toVisit {
-//       name
-//       location
-//       pricePoint
-//       comment
-//       // should I have comment if it's from user input and not api call?
-//     }
-//   }
-// `;
+export const QUERY_BRUNCHSPOT = gql`
+  query brunchSpot {
+    brunchSpot {
+      name
+      location
+      price
+      rating
+    
+    }
+  }
+`;
