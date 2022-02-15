@@ -9,7 +9,6 @@ import Auth from "../utils/auth";
 const Signup = () => {
   const [formState, setFormState] = useState({
     name: "",
-    email: "",
     password: "",
   });
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
@@ -49,7 +48,7 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/profile/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
