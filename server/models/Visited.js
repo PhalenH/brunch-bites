@@ -4,40 +4,36 @@ const VisitedSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
   },
   location: {
     type: String,
-    required: true,
+    trim: true,
   },
-  pricePoint: {
+  price: {
     type: String,
     trim: true,
-    // required: true,
+  },
+  // personal rating
+  myRating: {
+    type: mongoose.Decimal128,
+    trim: true,
   },
   comment: {
     type: String,
     trim: true,
     minlength: 1,
-    maxlength: 280,
-    // required: true,
+    maxlength: 180,
   },
   dateVisted: {
-    type: String,
+    type: Date,
     trim: true,
-    // required: true,
   },
-  rating: {
-    type: Number,
-    trim: true,
-    // required: true,
-  },
-  //   picture: {
-  //     type: String,
-  //     trim: true,
-  //     // required: true,
-  //   },
+  // picture: {
+  //   // type: String, what should this be?
+  //   type: ,
+  //   trim: true,
+  // },
 });
 
 const Visited = model("Visited", VisitedSchema);
