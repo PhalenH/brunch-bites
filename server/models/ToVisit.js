@@ -4,24 +4,28 @@ const ToVisitSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
   },
   location: {
     type: String,
     required: true,
   },
-  pricePoint: {
+  price: {
+    // if sort is needed, use price.length
     type: String,
     trim: true,
-    // required: true,
+    required: true,
+  },
+  rating: {
+    type: mongoose.Decimal128,
+    trim: true,
+    required: true,
   },
   comment: {
     type: String,
     trim: true,
     minlength: 1,
-    maxlength: 280,
-    // required: true,
+    maxlength: 180,
   },
 });
 
