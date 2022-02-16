@@ -25,7 +25,7 @@ const Profile = () => {
 
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-    return <Redirect to="/me" />;
+    return <Redirect to="/profile/me" />;
   }
 
   if (loading) {

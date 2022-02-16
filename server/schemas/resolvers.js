@@ -4,28 +4,30 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
-    },
+    // not sure if we need this unless we're viewing other profiles
+    // profile: async (parent, { profileId }) => {
+    //   return Profile.findOne({ _id: profileId }).populate("toVisitList").populate("visitedList");
+    // },
+
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return Profile.findOne({ _id: context.user._id }).populate("toVisitList").populate("visitedList");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
 
     toVisitList: async () => {
-      return ToVisit.find();
+      return ToVisit.find({});
     },
 
     visitedList: async () => {
-      return Visited.find();
+      return Visited.find({});
     },
 
     // how to set this up for different user searches (name, location, price, rating)
     //  so we can avoid when they search by price and the url would have ?location=""
-    brunchSpot: async (parent, { name, location, price, rating }) => {
+    brunchSpotResults: async (parent, { name, location, price, rating }) => {
       const response = await axios({
         method: "get",
         url: `https://api.yelp.com/v3/businesses/search?location=philadelpia`,
@@ -54,16 +56,27 @@ const resolvers = {
       return Visited.create({  name, location, price, myRating, comment, dateVisited  });
     },
 
+    removeToVisit: async (parent, ),
+    removeVisited: async (parent, ),
+
     addProfile: async (parent, { name, password }) => {
       const profile = await Profile.create({ name, password });
       const token = signToken(profile);
       return { token, profile };
     },
-    login: async (parent, { password }) => {
+    
+    login: async (parent, { name, password }) => {
+
+      const profile = await Profile.findOne({ name });
+      if (!profile) {
+        throw new AuthenticationError('No profile with this name found!');
+      }
+
       const correctPw = await profile.isCorrectPassword(password);
       if (!correctPw) {
         throw new AuthenticationError("Incorrect password!");
       }
+
       const token = signToken(profile);
       return { token, profile };
     },
