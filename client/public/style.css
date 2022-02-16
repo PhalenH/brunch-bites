@@ -1,0 +1,77 @@
+.card {
+    border: black 1px solid;
+    box-shadow: 0px 0px 61px -11px rgba(0,0,0,0.75);
+    display: flex;
+}
+
+.card-body {
+    background-color: #D8FE55;
+}
+
+.list-group-item {
+    background-color: #FE809B;
+}
+
+.navbar {
+    background-color: #40EAC4;
+}
+
+/* h1 {
+    text-align: center;
+} */
+
+#searchDiv {
+    border-top: rgba(0,0,0,.7) 1px solid;
+    border-bottom: rgba(0,0,0,.7) 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+/* #userVisits {
+    border: black 3px solid;
+} */
+
+#containerToVisit {
+    border-right: rgba(0,0,0,.7) .5px solid;
+}
+
+#containerVisited {
+    border-left: rgba(0,0,0,.7) .5px solid;
+}
+
+
+ul {
+    list-style-type: none;
+  }
+
+
+/*
+flip card
+*/
+.card-flip > div {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    /* width: 100%;
+    height: 100%; */
+    margin: 0;
+    display: flex;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    /* position: absolute; */
+    top: 0;
+  }
+  
+  .card-flip:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+    
+  .card-flip:hover .card-back {
+    transform: rotateY(0deg);
+  }
