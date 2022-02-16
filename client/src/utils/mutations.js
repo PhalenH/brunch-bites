@@ -25,21 +25,28 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_TO_VISIT = gql`
-  mutation addToVisit($profileId: ID!, $toVist: String!) {
-    addSkill(profileId: $profileId, toVist: $toVist) {
+  mutation addToVisit($name: String!, $location: String!, $price: String!, $rating: mongoose.Decimal128!, $comment: String) {
+    addToVisit(name: $name, location: $location, price: $price, rating: $rating, comment: $comment) {
       _id
       name
-    // TODO: finish models
+      location
+      price
+      rating
+      comment
     }
   }
 `;
 
 export const ADD_VISITED = gql`
-  mutation addVisited($visited: String!) {
-    addVisited(visited: $visited) {
+  mutation addVisited($name: String!, $location: String!, $price: String!, $rating: mongoose.Decimal128!, $comment: String, $dateVisited: Date) {
+    addVisited(name: $name, location: $location, price: $price, rating: $rating, comment: $comment, dateVisited: $dateVisited) {
       _id
       name
-    // TODO: finish models
+      location
+      price
+      myRating
+      comment
+      dateVisited
     }
   }
 `;

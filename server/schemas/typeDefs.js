@@ -5,8 +5,8 @@ const typeDefs = gql`
     _id: ID
     name: String
     password: String
-    toVisitList: [toVisit]!
-    visitedList: [visited]!
+    toVisitList: [ToVisit]!
+    visitedList: [Visited]!
   }
 
   type Auth {
@@ -14,7 +14,7 @@ const typeDefs = gql`
     profile: Profile
   }
   
-  type toVisit {
+  type ToVisit {
     name
     location
     price
@@ -22,7 +22,7 @@ const typeDefs = gql`
     comment
   }
 
-  type visited {
+  type Visited {
     name
     location
     price
@@ -31,7 +31,7 @@ const typeDefs = gql`
     dateVisited
   }
 
-  type brunchSpot {
+  type BrunchSpot {
     name
     location
     price
@@ -39,22 +39,27 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [Profile]!
+    // profiles: [Profile]!
+    // toVisitList: [ToVisit]
+    // visitedList: [Visited]
+    
     profile(profileId: ID!): Profile
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
-    toVisitList: [toVisit]
-    visitedList: [visited]
-    brunchSpotList: [brunchSpot]
+
+    brunchSpotResults: [BrunchSpot]
   }
 
   type Mutation {
 
-    addToVisit(name: String!, location: String!, price: String!, rating mongoose.Decimal128!, comment: String): toVisit
+    addToVisit(name: String!, location: String!, price: String!, rating: mongoose.Decimal128!, comment: String): ToVisit
     addVisited(name: String!, location: String, price: String, myRating: mongoose.Decimal128, comment: String, dateVisited: Date): Visited
+    
+    removeTovisit
+    removeVisited
 
     addProfile(name: String!, password: String!): Auth
-    login(password: String!): Auth
+    login(name: String!, password: String!): Auth
   }
 `;
 
