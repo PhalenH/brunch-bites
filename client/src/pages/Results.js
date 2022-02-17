@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+// import { Redirect, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import SearchResults from '../components/SearchResults';
@@ -26,4 +26,4 @@ const Results = () => {
     );
   };
   
-  export default Home;
+  export default Results;

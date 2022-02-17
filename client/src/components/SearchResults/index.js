@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 
 const ResultsList = ({ results }) => {
   if (!results.length) {
@@ -24,7 +24,7 @@ const ResultsList = ({ results }) => {
                 </h4>
 
                 <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
+                  className=""
                   to={`${result.url}`}
                 >
                   View the yelp url.

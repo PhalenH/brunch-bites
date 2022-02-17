@@ -1,26 +1,32 @@
 [
   {
     "name": "John One",
-    "password": "Welcome"
+    "password": "Welcome1",
+    "places": []
   },
   {
     "name": "Bob Two",
-    "password": "Welcome"
+    "password": "Welcome2",
+    "places": []
   },
   {
     "name": "Jane Three",
-    "password": "Welcome"
+    "password": "Welcome3",
+    "places": []
   },
   {
     "name": "Bill Four",
-    "password": "Welcome"
+    "password": "Welcome4",
+    "places": []
   },
   {
     "name": "June Five",
-    "password": "Welcome"
+    "password": "Welcome5",
+    "places": []
   },
   {
     "name": "April Six",
-    "password": "Welcome"
+    "password": "Welcome6",
+    "places": []
   }
 ]
