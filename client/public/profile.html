@@ -23,185 +23,122 @@
     <div class="p-3" id="searchDiv">
         <input id="searchBar" type="text" placeholder="Search..">
     </div>
+
     <div class="container" id="userVisits">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6" id="containerToVisit">
                 <h1 class="text-center">To Visit</h1>
                 <ul class="text-center">
                     <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Visited</a>
-                                <a href="#" class="btn btn-primary">Remove</a>
+                        <div class="scene scene--card">
+                            <div class="card">
+                              <div class="card__face card__face--front">
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary">Visited</a>
+                                    <a href="#" class="btn btn-primary">Remove</a>
+                                    <a href="#" class="btn btn-primary" id="btn-Rotate-to-back">Click to rotate</a>
+                                </div>
+                                <img src="./placeholder.png" alt="temp" style="width:100%;height:100%;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Restaurant Name</h5>
+                                </div>
+                              </div>
+                              <div class="card__face card__face--back">
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary" id="btn-Rotate-to-front">Click to rotate</a>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Rating: *****</li>
+                                    <li class="list-group-item">Perice: $$$</li>
+                                    <li class="list-group-item">Address: 123 Coding Hurts Ln</li>
+                                    <li class="list-group-item">
+                                        <div class="input-group">
+                                            <textarea class="form-control" aria-label="With textarea"
+                                                placeholder="Personal Comment"></textarea>
+                                            <button class="btn btn-outline-secondary" type="button">Save</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                              </div>
                             </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Rating: *****</li>
-                                <li class="list-group-item">Price: $$</li>
-                                <li class="list-group-item">Address: 123 CodingisPain Ln</li>
-                                <li class="list-group-item">
-                                    <P>
-                                    <div class="input-group">
-                                        <textarea class="form-control" aria-label="With textarea"
-                                            placeholder="Personal Comment"></textarea>
-                                        <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
+                          </div>                    
                     </li>
-                    <!-- <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Visited</a>
-                                <a href="#" class="btn btn-primary">Remove</a>
-                            </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Rating: *****</li>
-                                <li class="list-group-item">Price: $$</li>
-                                <li class="list-group-item">Address: 123 CodingisPain Ln</li>
-                                <li class="list-group-item"><P><div class="input-group">
-                                    <textarea class="form-control" aria-label="With textarea" placeholder="Personal Comment"></textarea>
-                                    <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
-                    <!-- <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Visited</a>
-                                <a href="#" class="btn btn-primary">Remove</a>
-                            </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Rating: *****</li>
-                                <li class="list-group-item">Price: $$</li>
-                                <li class="list-group-item">Address: 123 CodingisPain Ln</li>
-                                <li class="list-group-item"><P><div class="input-group">
-                                    <textarea class="form-control" aria-label="With textarea" placeholder="Personal Comment"></textarea>
-                                    <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
             <div class="col-md-6" id="containerVisited">
                 <h1>Visited</h1>
                 <ul class="text-center">
                     <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Remove</a>
+                        <div class="scene scene--card">
+                            <div class="card">
+                              <div class="card__face card__face--front">
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary">Visited</a>
+                                    <a href="#" class="btn btn-primary">Remove</a>
+                                    <a href="#" class="btn btn-primary" id="btn-Rotate-to-back">Click to rotate</a>
+                                </div>
+                                <img src="./placeholder.png" alt="temp" style="width:100%;height:100%;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Restaurant Name</h5>
+                                </div>
+                              </div>
+                              <div class="card__face card__face--back">
+                                <div class="card-body">
+                                    <a href="#" class="btn btn-primary" id="btn-Rotate-to-front">Click to rotate</a>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Personal Rating: *****</li>
+                                    <li class="list-group-item">
+                                        <div class="input-group">
+                                            <textarea class="form-control" aria-label="With textarea"
+                                                placeholder="Personal Comment"></textarea>
+                                            <button class="btn btn-outline-secondary" type="button">Save</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                              </div>
                             </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Personal Rating: Trash </li>
-                                <li class="list-group-item">
-                                    <textarea class="form-control" aria-label="With textarea"
-                                        placeholder="Personal Comment"></textarea>
-                                    <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
+                          </div>                    
                     </li>
-                    <!-- <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Remove</a>
-                            </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Personal Rating: Trash </li>
-                                <li class="list-group-item">
-                                    <textarea class="form-control" aria-label="With textarea" placeholder="Personal Comment"></textarea>
-                                    <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
-                    <!-- <li class="p-2">
-                        <div class="card" style="width: 14rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Remove</a>
-                            </div>
-                            <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Restaurant Name</h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Personal Rating: Trash </li>
-                                <li class="list-group-item">
-                                    <textarea class="form-control" aria-label="With textarea" placeholder="Personal Comment"></textarea>
-                                    <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> -->
                 </ul>
-
             </div>
-            
+
         </div>
     </div>
 
     <!-- Test flip cards here -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card card-flip">
-                    <!-- front of card  -->
-                    <div class="card-front text-white bg-dark">
-                        <div class="card-body">
-                            <a href="#" class="btn btn-primary">Visited</a>
-                            <a href="#" class="btn btn-primary">Remove</a>
-                        </div>
-                        <img class="card-img-top" src="./logo192.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Restaurant Name</h5>
-                        </div>
+<!--
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Visited</a>
+                    <a href="#" class="btn btn-primary">Remove</a>
                 </div>
-                    <!-- end of front card -->
-                    <!-- back of card -->
-                    <div class="card-back bg-white">
-                        <!-- <div class="card-body"> -->
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Rating: *****</li>
-                                <li class="list-group-item">Price: $$</li>
-                                <li class="list-group-item">Address: 123 CodingisPain Ln</li>
-                                <li class="list-group-item">
-                                    <P>
-                                    <div class="input-group">
-                                        <textarea class="form-control" aria-label="With textarea"
-                                            placeholder="Personal Comment"></textarea>
-                                        <button class="btn btn-outline-secondary" type="button">Save</button>
-                                </li>
-                            </ul>
-                        <!-- </div> -->
-                    </div>
-                    <!-- end of back card -->
+                <img src="./logo192.png" alt="Avatar" style="width:100%;height:100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Restaurant Name</h5>
                 </div>
-            </div>    
+            </div>
+            <div class="flip-card-back">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Personal Rating: Trash </li>
+                    <li class="list-group-item">
+                        <textarea class="form-control" aria-label="With textarea"
+                            placeholder="Personal Comment"></textarea>
+                        <button class="btn btn-outline-secondary" type="button">Save</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+-->
+
+
+    <!-- end of card testing -->
 
 </body>
+
+<script src="profileindex.js"></script>
 
 </html>
