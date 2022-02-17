@@ -13,53 +13,74 @@ const typeDefs = gql`
     token: ID!
     profile: Profile
   }
-  
+
   type ToVisit {
-    name
-    location
-    price
-    rating
-    comment
+    _id: ID
+    name: String
+    location: String
+    price: String
+    url: String
+    rating: Float
+    comment: String
   }
 
   type Visited {
-    name
-    location
-    price
-    myRating
-    comment
-    dateVisited
+    _id: ID
+    name: String
+    location: String
+    price: String
+    url: String
+    myRating: Float
+    comment: String
+    dateVisited: String
   }
 
   type BrunchSpot {
-    name
-    location
-    price
-    rating
+    name: String
+    location: String
+    price: String
+    rating: Float
+    url: String
   }
 
   type Query {
-    // profiles: [Profile]!
-    // toVisitList: [ToVisit]
-    // visitedList: [Visited]
-    
     profile(profileId: ID!): Profile
-    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
+    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
 
-    brunchSpotResults: [BrunchSpot]
+    toVisitList: [ToVisit]
+    visitedList: [Visited]
+    
+    brunchSpotList: [BrunchSpot]
   }
 
   type Mutation {
-
-    addToVisit(name: String!, location: String!, price: String!, rating: mongoose.Decimal128!, comment: String): ToVisit
-    addVisited(name: String!, location: String, price: String, myRating: mongoose.Decimal128, comment: String, dateVisited: Date): Visited
-    
-    removeTovisit
-    removeVisited
-
     addProfile(name: String!, password: String!): Auth
     login(name: String!, password: String!): Auth
+
+    addToVisit(
+      profileId: ID!
+      name: String!
+      location: String!
+      price: String
+      url: String
+      rating: Float
+      comment: String
+    ): Profile
+
+    addVisited(
+      profileId: ID!
+      name: String!
+      location: String!
+      price: String
+      url: String
+      myRating: Float
+      comment: String
+      dateVisited: String
+    ): Profile
+
+    removeToVisit(profileId: ID!, placeId: ID!): Profile
+    removeVisited(profileId: ID!, placeId: ID!): Profile
   }
 `;
 

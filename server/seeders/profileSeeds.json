@@ -1,3 +1,26 @@
 [
-  
+  {
+    "name": "John One",
+    "password": "Welcome"
+  },
+  {
+    "name": "Bob Two",
+    "password": "Welcome"
+  },
+  {
+    "name": "Jane Three",
+    "password": "Welcome"
+  },
+  {
+    "name": "Bill Four",
+    "password": "Welcome"
+  },
+  {
+    "name": "June Five",
+    "password": "Welcome"
+  },
+  {
+    "name": "April Six",
+    "password": "Welcome"
+  }
 ]

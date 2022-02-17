@@ -3,26 +3,27 @@ import { gql } from "@apollo/client";
 export const QUERY_SINGLE_PROFILE = gql`
   query singleProfile($profileId: ID!) {
     profile(profileId: $profileId) {
-        _id
+      _id
+      name
+      toVisit {
         name
-        toVisit {
-          name
-          location
-          price
-          rating
-          comment
-        }
-        visited {
-          name
-          location
-          price
-          myRating
-          comment
-          dataVisited
-          rating
-        }
+        location
+        price
+        url
+        rating
+        comment
+      }
+      visited {
+        name
+        location
+        price
+        url
+        myRating
+        comment
+        dateVisited
       }
     }
+  }
 `;
 
 export const QUERY_ME = gql`
@@ -34,6 +35,7 @@ export const QUERY_ME = gql`
         name
         location
         price
+        url
         rating
         comment
       }
@@ -41,22 +43,23 @@ export const QUERY_ME = gql`
         name
         location
         price
+        url
         myRating
         comment
-        dataVisited
-        rating
+        dateVisited
       }
     }
   }
 `;
 
-export const QUERY_BRUNCHSPOT = gql`
-  query brunchSpot {
-    brunchSpot {
+export const QUERY_BRUNCH_SPOT_LIST = gql`
+  query brunchSpotList {
+    brunchSpotList {
       name
       location
       price
       rating
+      url
     }
   }
 `;
@@ -73,7 +76,7 @@ export const QUERY_BRUNCHSPOT = gql`
 //   }
 // `;
 
-// DON'T THINK WE NEED THESE SINCE LIST WILL BE DISPLAYED WITH USER QUERY
+// DON'T THINK WE NEED THESE SINCE LISTS WILL BE DISPLAYED WITH USER QUERY
 
 // export const VISITED = gql`
 //   query visited {

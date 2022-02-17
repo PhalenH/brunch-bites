@@ -1,16 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-const ResultsList = ({ profiles, title }) => {
-  if (!profiles.length) {
-    return <h3>No Profiles Yet</h3>;
+const ResultsList = ({ results }) => {
+  if (!results.length) {
+    return <h3>No Results found</h3>;
   }
 
   return (
     <div>
-      <h3 className="">{title}</h3>
       <div className="">
-        {profiles && profiles.map((profile) => <h1>to fill with data</h1>)}
+        {results &&
+          results.map((result) => (
+            <div key={result._id} className="">
+              <div className="">
+                <h4 className="">
+                  {result.name} <br />
+                  <ul>
+                    <li>{result.location}</li>
+                    <li>{result.price}</li>
+                    <li>{result.rating}</li>
+                  </ul>
+                </h4>
+
+                <Link
+                  className="btn btn-block btn-squared btn-light text-dark"
+                  to={`${result.url}`}
+                >
+                  View the yelp url.
+                </Link>
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );

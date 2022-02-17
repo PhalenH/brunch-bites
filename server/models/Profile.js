@@ -13,16 +13,11 @@ const profileSchema = new Schema({
     required: true,
     minlength: 6,
   },
-  toVisit: [
+  places: [
     {
       type: Schema.Types.ObjectId, // refers to the _id object type
-      ref: "toVisit", // refers to the collection called toVisit in toVisit.js
-    },
-  ],
-  Visited: [
-    {
-      type: Schema.Types.ObjectId, // refers to the _id object type
-      ref: "Visted", // refers to the collection called Visted in Visted.js
+      ref: "Places", // refers to the collection called toVisit in toVisit.js
+      unique: true
     },
   ],
 });

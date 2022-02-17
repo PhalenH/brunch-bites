@@ -1,33 +1,46 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile, ToVisit, Visited } = require("../models");
+const { Profile, ToVisit, Visited, Places } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    // not sure if we need this unless we're viewing other profiles
-    // profile: async (parent, { profileId }) => {
-    //   return Profile.findOne({ _id: profileId }).populate("toVisitList").populate("visitedList");
-    // },
-
+    profile: async (parent, { profileId }) => {
+    let prof = await Profile.findOne({ _id: profileId }).populate("places");
+      return {...prof, 
+        toVisitList: prof.places.filter(place => place.visited = false), 
+        visitedList: prof.places.filter(place => place.visited = true)
+      }
+    },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id }).populate("toVisitList").populate("visitedList");
+        let prof = await Profile.findOne({ _id: context.user._id }).populate("places");
+        return {...prof, 
+          toVisitList: prof.places.filter(place => place.visited = false), 
+          visitedList: prof.places.filter(place => place.visited = true)
+        }
       }
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    toVisitList: async () => {
-      return ToVisit.find({});
+    toVisitList: async (parent, args, context) => {
+      if (context.user) {
+        let prof = await Profile.findOne({ _id: context.user._id }).populate("places");
+        return prof.places.filter(place => place.visited = false)
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
 
-    visitedList: async () => {
-      return Visited.find({});
+    visitedList: async (parent, args, context) => {
+      if (context.user) {
+        let prof = await Profile.findOne({ _id: context.user._id }).populate("places");
+        return prof.places.filter(place => place.visited = true)
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
 
-    // how to set this up for different user searches (name, location, price, rating)
-    //  so we can avoid when they search by price and the url would have ?location=""
-    brunchSpotResults: async (parent, { name, location, price, rating }) => {
+    // how to set this up for searching by location
+    brunchSpotList: async (parent, { name, location, price, rating }) => {
       const response = await axios({
         method: "get",
         url: `https://api.yelp.com/v3/businesses/search?location=philadelpia`,
@@ -44,21 +57,12 @@ const resolvers = {
         location: dataResponse.location,
         price: dataResponse.price,
         rating: dataResponse.rating,
+        url: dataResponse.url
       };
     },
   },
 
   Mutation: {
-    addToVisit: async (parent, { name, location, price, rating, comment }) => {
-      return ToVisit.create({ name, location, price, rating, comment });
-    },
-    addVisited: async (parent, { name, location, price, myRating, comment, dateVisited }) => {
-      return Visited.create({  name, location, price, myRating, comment, dateVisited  });
-    },
-
-    removeToVisit: async (parent, ),
-    removeVisited: async (parent, ),
-
     addProfile: async (parent, { name, password }) => {
       const profile = await Profile.create({ name, password });
       const token = signToken(profile);
@@ -80,6 +84,62 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
+
+    addToVisit: async (parent, { profileId, name, location, price, url, rating, comment }, context) => {
+      if (context.user) {
+        let values = { name, location, price, url, rating, comment, visited: false };
+
+        // if name doesn't exist it will create it, if it does exist it will update using the name as a filter
+        let placeRecord = await Places.findOneAndUpdate( {name: name}, {$set: {...values}}, { upsert: true, returnNewDocument: true})
+        
+        // add to the profile the place._id
+        let prof = await Profile.findOne({ _id: profileId })
+        let found = prof.places.filter(place => place._id === placeRecord._id)
+        if (found.length > 0 ){
+          return await Profile.findOne({ _id: profileId }).populate("places");
+        }
+        else {
+          return await Profile.findOneAndUpdate( { _id: profileId}, {$push: {places: placeRecord._id}}, { upsert: true, returnNewDocument: true}).populate("places");
+        }
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+ 
+      
+    addVisited: async (parent, { profileId, name, location, price, url, myRating, comment, dateVisited }, context) => {
+      if (context.user) {
+        let values = { name, location, price, url, myRating, comment, dateVisited, visited: true };
+
+        // if name doesn't exist it will create it, if it does exist, it will update using the name as a filter
+        let placeRecord = await Places.findOneAndUpdate( {name: name}, {$set: {...values}}, { upsert: true, returnNewDocument: true})
+        
+        // add to the profile the place._id
+        let prof = await Profile.findOne({ _id: profileId })
+        let found = prof.places.filter(place => place._id === placeRecord._id)
+        if (found.length > 0 ){
+          return await Profile.findOne({ _id: profileId }).populate("places");
+        }
+        else {
+          return await Profile.findOneAndUpdate( { _id: profileId}, {$push: {places: placeRecord._id}}, { upsert: true, returnNewDocument: true}).populate("places");
+        }
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+
+    removeToVisit: async (parent, { profileId, placeId}, context) => {
+      if (context.user) {
+      return await Profile.findOneAndUpdate( { _id: profileId}, {$pullAll: {places: placeId}}, { returnNewDocument: true}).populate("places");
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeVisited: async (parent, { profileId, placeId}, context) => {
+      if (context.user) {
+      return await Profile.findOneAndUpdate( { _id: profileId}, {$pullAll: {places: placeId}}, { returnNewDocument: true}).populate("places");
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
   },
 };
 
