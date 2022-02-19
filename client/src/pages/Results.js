@@ -7,8 +7,8 @@ import { QUERY_BRUNCH_SPOT_LIST } from '../utils/queries';
 
 const Results = () => {
     const { loading, data } = useQuery(QUERY_BRUNCH_SPOT_LIST);
-    const brunchSpotList = data?.brunchSpotList || [];
-  
+    const brunchSpotList = data?.brunchSpotList || []
+    console.log(brunchSpotList)
     return (
       <main>
         <div className="">

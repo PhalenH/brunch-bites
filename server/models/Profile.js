@@ -17,7 +17,7 @@ const profileSchema = new Schema({
     {
       type: Schema.Types.ObjectId, // refers to the _id object type
       ref: "Places", // refers to the collection called toVisit in toVisit.js
-      unique: true
+      // unique: true
     },
   ],
 });

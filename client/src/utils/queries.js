@@ -57,11 +57,16 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_BRUNCH_SPOT_LIST = gql`
-  query brunchSpotList {
-    brunchSpotList {
+  query brunchSpotList($city: String!) {
+    brunchSpotList(city: $city) {
       _id
       name
-      location
+      location {
+        address1
+        city
+        zip_code
+        state
+      }
       price
       rating
       url

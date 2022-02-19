@@ -36,12 +36,19 @@ const typeDefs = gql`
   }
 
   type BrunchSpot {
-    _id: ID
+    _id: String
     name: String
-    location: String
+    location: Location
     price: String
     rating: Float
     url: String
+  }
+
+  type Location {
+    address1: String
+    city: String
+    zip_code: String
+    state: String
   }
 
   type Query {
@@ -52,8 +59,8 @@ const typeDefs = gql`
 
     toVisitList: [ToVisit]
     visitedList: [Visited]
-    
-    brunchSpotList: [BrunchSpot]
+
+    brunchSpotList(city: String!): [BrunchSpot]
   }
 
   type Mutation {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { useQuery } from "@apollo/client";
 
 const ResultsList = ({ results }) => {
+  console.log(results)
   if (!results.length) {
     return <h3>No Results found</h3>;
   }
@@ -19,7 +20,7 @@ const ResultsList = ({ results }) => {
                 <h4 className="">
                   {result.name} <br />
                   <ul>
-                    <li>{result.location}</li>
+                    <li>{result.location.state}</li>
                     <li>{result.price}</li>
                     <li>{result.rating}</li>
                   </ul>
