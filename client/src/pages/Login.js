@@ -44,9 +44,8 @@ const Login = (props) => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
+    <main className="login-background">
+        <div className="login-page">
           <h4 className="">Login</h4>
           <div className="">
             {data ? (
@@ -73,7 +72,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className=""
+                  className="submit"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
@@ -85,7 +84,6 @@ const Login = (props) => {
             {error && <div className="">{error.message}</div>}
           </div>
         </div>
-      </div>
     </main>
   );
 };
