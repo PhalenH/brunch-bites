@@ -18,7 +18,7 @@ In this demo, you will create a profile and verify JSON Web Tokens to log into a
 
   * The `addProfile` mutation now takes in more profile information as input and returns an `Auth` object.
 
-  * A `login` mutation takes in an `email` and `password` and returns an `Auth` object.
+  * A `login` mutation takes in an `name` and `password` and returns an `Auth` object.
 
 * Open [auth.js](utils/auth.js) and explain the contents:
 
@@ -26,39 +26,39 @@ In this demo, you will create a profile and verify JSON Web Tokens to log into a
 
   * We create a JWT `secret` and an `expiration`.
 
-  * We export the `signToken()` function that takes in a `user` object and adds the `email` and `_id` properties to the token, along with the `secret` and `expiration`.
+  * We export the `signToken()` function that takes in a `user` object and adds the `name` and `_id` properties to the token, along with the `secret` and `expiration`.
 
 * **DO NOT** explain the code `resolver.js` as that is the objective of the following `22-Stu_Sign-JWT` activity!
 
 * To demonstrate how it all works, run `npm run watch` in your command line and open your browser to <http://localhost:3001/graphql> to view the GraphQL Playground.
 
-  * Query all users for their `email` and `password`. Make note of one user's email and password to test out the `login()` mutation.
+  * Query all users for their `name` and `password`. Make note of one user's name and password to test out the `login()` mutation.
 
     ```graphql
     query {
       profiles {
-        email
+        name
         password
       }
     }
     ```
 
-  * Open another tab in GraphQL Playground and test the `login()` mutation using the query variables `email` and `password` of the user noted above. 
+  * Open another tab in GraphQL Playground and test the `login()` mutation using the query variables `name` and `password` of the user noted above. 
 
     ```graphql
-    mutation login($email: String!, $password: String!) {
-      login(email: $email, password: $password) {
+    mutation login($name: String!, $password: String!) {
+      login(name: $name, password: $password) {
         user {
           _id
-          email
+          name
         }
         token
       } 
     }
     ```
 
-  * You should be able to see the `token` along with the user's `email` and `_id`. Copy the `token`.
+  * You should be able to see the `token` along with the user's `name` and `_id`. Copy the `token`.
 
 * Open your browser to <https://jwt.io/> and paste the `token` in the `Encoded` text box.
 
-  * In the `Decoded` boxes, you should be able to see the Header, Payload (which includes the `email` and `_id`), and Signature.
+  * In the `Decoded` boxes, you should be able to see the Header, Payload (which includes the `name` and `_id`), and Signature.

@@ -1,5 +1,6 @@
 const Profile = require("./Profile");
-const ToVist = require("./ToVist");
+const ToVisit = require("./ToVisit");
 const Visited = require("./Visited");
+const Places = require("./Places");
 
-module.exports = { Profile, ToVist, Visited };
+module.exports = { Profile, ToVisit, Visited, Places };

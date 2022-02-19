@@ -9,7 +9,6 @@ import Auth from "../utils/auth";
 const Signup = () => {
   const [formState, setFormState] = useState({
     name: "",
-    email: "",
     password: "",
   });
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
@@ -49,7 +48,7 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/profile/me">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -59,14 +58,6 @@ const Signup = () => {
                   name="name"
                   type="text"
                   value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className=""
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
                   onChange={handleChange}
                 />
                 <input
@@ -87,7 +78,11 @@ const Signup = () => {
               </form>
             )}
 
-            {error && <div className="">{error.message}</div>}
+            {error && (
+              <div className="">
+                {error.message}
+              </div>
+            )}
           </div>
         </div>
       </div>

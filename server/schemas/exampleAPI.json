@@ -1,0 +1,20 @@
+copied from console.log
+{
+"alias": "reading-terminal-market-philadelphia",
+"categories": "(2)" "[{…}, {…}]",
+"coordinates": {"latitude": 39.953341464505, "longitude": -75.1588545174235},
+"display_phone": "(215) 922-2317",
+"distance": 6467.805997578769,
+"id": "ytynqOUb3hjKeJfRj5Tshw",
+"image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/2h_XVqLpMyBgF6x9zDPUUA/o.jpg",
+"is_closed": false,
+"location": {"address1": "51 N 12th St", "address2": "", "address3": "", "city": "Philadelphia", "zip_code": "19107", "…"},
+"name": "Reading Terminal Market",
+"phone": "+12159222317",
+"price": "$$",
+"rating": 4.5,
+"review_count": 5755,
+"transactions": "(2)" ["delivery", "pickup"],
+"url": "https://www.yelp.com/biz/reading-terminal-market-philadelphia?adjust_creative=cBKuMQBzKOtoog2Sl3DIQw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=cBKuMQBzKOtoog2Sl3DIQw",
+"[[Prototype]]": "Object"
+}
