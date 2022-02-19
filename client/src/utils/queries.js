@@ -6,6 +6,7 @@ export const QUERY_SINGLE_PROFILE = gql`
       _id
       name
       toVisit {
+        _id
         name
         location
         price
@@ -14,6 +15,7 @@ export const QUERY_SINGLE_PROFILE = gql`
         comment
       }
       visited {
+        _id
         name
         location
         price
@@ -32,6 +34,7 @@ export const QUERY_ME = gql`
       _id
       name
       toVisit {
+        _id
         name
         location
         price
@@ -40,6 +43,7 @@ export const QUERY_ME = gql`
         comment
       }
       visited {
+        _id
         name
         location
         price
@@ -55,6 +59,7 @@ export const QUERY_ME = gql`
 export const QUERY_BRUNCH_SPOT_LIST = gql`
   query brunchSpotList {
     brunchSpotList {
+      _id
       name
       location
       price

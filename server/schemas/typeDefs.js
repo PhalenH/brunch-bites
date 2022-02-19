@@ -36,6 +36,7 @@ const typeDefs = gql`
   }
 
   type BrunchSpot {
+    _id: ID
     name: String
     location: String
     price: String
@@ -44,7 +45,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [Profile]!
+    profiles: [Profile]
     profile(profileId: ID!): Profile
     me: Profile
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data

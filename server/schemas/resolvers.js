@@ -68,27 +68,24 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
-    
-    login: async (parent, { name, password }) => {
 
+    login: async (parent, { name, password }) => {
       const profile = await Profile.findOne({ name });
       if (!profile) {
         throw new AuthenticationError('No profile with this name found!');
       }
-
       const correctPw = await profile.isCorrectPassword(password);
       if (!correctPw) {
         throw new AuthenticationError("Incorrect password!");
       }
-
       const token = signToken(profile);
       return { token, profile };
     },
 
     addToVisit: async (parent, { profileId, name, location, price, url, rating, comment }, context) => {
       if (context.user) {
-        let values = { name, location, price, url, rating, comment, visited: false };
 
+        let values = { name, location, price, url, rating, comment, visited: false };
         // if name doesn't exist it will create it, if it does exist it will update using the name as a filter
         let placeRecord = await Places.findOneAndUpdate( {name: name}, {$set: {...values}}, { upsert: true, returnNewDocument: true})
         
@@ -108,8 +105,8 @@ const resolvers = {
       
     addVisited: async (parent, { profileId, name, location, price, url, myRating, comment, dateVisited }, context) => {
       if (context.user) {
+        
         let values = { name, location, price, url, myRating, comment, dateVisited, visited: true };
-
         // if name doesn't exist it will create it, if it does exist, it will update using the name as a filter
         let placeRecord = await Places.findOneAndUpdate( {name: name}, {$set: {...values}}, { upsert: true, returnNewDocument: true})
         
