@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
+import Header from "../components/Header";
 import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
 
@@ -43,6 +44,7 @@ const Profile = () => {
 
   return (
     <section>
+      <Header />
       <div>
         <h2 className="">Welcome </h2>
         <div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 import {  } from "../utils/queries";
-import Header from "../components/Header";
+import LandingPage from "../components/LandingPage"
 
 
 const Home = () => {
@@ -10,11 +10,13 @@ const Home = () => {
   // const profiles = data?.profiles || [];
 
   return (
-    <>
-    <Header />
-    
-    {/* <LoginSignup /> */}
-    </>
+    <main>
+      <div className="">
+        <div className="">
+          <LandingPage/>
+        </div>
+      </div>
+    </main>
   );
 };
 
