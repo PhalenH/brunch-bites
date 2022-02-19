@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import ToVisitList from "../components/toVisitList";
+import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";

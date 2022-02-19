@@ -7,6 +7,8 @@ const ResultsList = ({ results }) => {
     return <h3>No Results found</h3>;
   }
 
+  // add button to use addToVisit mutation 
+
   return (
     <div>
       <div className="">
