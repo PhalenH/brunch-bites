@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/bbLogo.png";
-import Footer from "../Footer";
 
 const LandingPage = () => {
   return (
@@ -23,7 +22,6 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-        <Footer />
       </header>
     </main>
   );

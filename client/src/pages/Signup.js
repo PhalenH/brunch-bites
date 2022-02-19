@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
+import { Link, Redirect } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
@@ -47,7 +48,7 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{" "}
-                <Link to="/profile/me">back to the homepage.</Link>
+                <Redirect to="/profile/me" />;
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
