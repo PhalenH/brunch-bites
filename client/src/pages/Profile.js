@@ -1,9 +1,9 @@
 import React from "react";
-
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-// Import toVisitList and visited component
+import ToVisitList from "../components/ToVisitList";
+import VisitedList from "../components/VisitedList";
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
 
@@ -42,9 +42,17 @@ const Profile = () => {
   }
 
   return (
-    <div>
-      <h2 className="">List of brunch spots</h2>
-    </div>
+    <section>
+      <div>
+        <h2 className="">Welcome </h2>
+        <div>
+          <ToVisitList toVisitResults={profile.tovisit} />
+        </div>
+        <div>
+          <VisitedList visitedResults={profile.visited} />
+        </div>
+      </div>
+    </section>
   );
 };
 

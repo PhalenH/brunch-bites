@@ -44,6 +44,7 @@ function App() {
         <div className="">
           {/* <Header /> */}
           <div className="">
+
             <Route exact path="/">
               <Home />
             </Route>
@@ -63,10 +64,11 @@ function App() {
             <Route exact path="/profile/me">
               <Profile />
             </Route>
-
-            {/* <Route exact path="/profile/:profileName">
+          {/* do we need both of these */}
+            <Route exact path="/profile/:profileName">
               <Profile />
-            </Route> */}
+            </Route>
+
           </div>
           {/* <Footer /> */}
         </div>

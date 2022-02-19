@@ -1,16 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const VistedList = ({ profiles, title }) => {
-  if (!profiles.length) {
+const VistedList = ({ visitedResults}) => {
+  if (!visitedResults.length) {
     return <h3>No Profiles Yet</h3>;
   }
 
   return (
     <div>
-      <h3 className="">{title}</h3>
+      <h3 className="">{}</h3>
       <div className="">
-        {profiles && profiles.map((profile) => <h1>to fill with data</h1>)}
+        {visitedResults && visitedResults.map((visited) => (
+          <div key={visited._id} className="">
+          <div className="">
+            <h4 className="">
+              {visited.name} <br />
+              <ul>
+                <li>{visited.location}</li>
+                <li>{visited.price}</li>
+                <li>{visited.myRating}</li>
+                <li>{visited.comment}</li>
+                <li>{visited.dateVisited}</li>
+              </ul>
+            </h4>
+
+            <Link
+              className=""
+              to={`${visited.url}`}
+            >
+              View the yelp url.
+            </Link>
+          </div>
+        </div>
+        ))}
       </div>
     </div>
   );
