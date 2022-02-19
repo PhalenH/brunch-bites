@@ -62,14 +62,6 @@ const Signup = () => {
                 />
                 <input
                   className=""
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className=""
                   placeholder="******"
                   name="password"
                   type="password"
@@ -77,7 +69,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className=""
+                  className="submit"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >

@@ -6,7 +6,7 @@ const Footer = () => {
   const history = useHistory();
   return (
     <footer className="">
-      <div className="">
+      <div className="back-btn">
         {location.pathname !== "/" && (
           <button
             className=""
@@ -15,8 +15,9 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>&copy; {new Date().getFullYear()} - Brunch Buddy</h4>
-      </div>
+        </div>
+        <h5>&copy; {new Date().getFullYear()} - Brunch Bites</h5>
+      
     </footer>
   );
 };

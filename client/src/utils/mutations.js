@@ -25,7 +25,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_TO_VISIT = gql`
-  mutation addToVisit($name: String!, $location: String!, $price: String!, $rating: mongoose.Decimal128!, $comment: String) {
+  mutation addToVisit($name: String!, $location: String!, $price: String!, $rating: Float!, $comment: String) {
     addToVisit(name: $name, location: $location, price: $price, rating: $rating, comment: $comment) {
       _id
       name
@@ -38,7 +38,7 @@ export const ADD_TO_VISIT = gql`
 `;
 
 export const ADD_VISITED = gql`
-  mutation addVisited($name: String!, $location: String!, $price: String!, $rating: mongoose.Decimal128!, $comment: String, $dateVisited: Date) {
+  mutation addVisited($name: String!, $location: String!, $price: String!, $rating: Float!, $comment: String, $dateVisited: Date) {
     addVisited(name: $name, location: $location, price: $price, rating: $rating, comment: $comment, dateVisited: $dateVisited) {
       _id
       name

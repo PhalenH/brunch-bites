@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Login from "../../pages/Login";
+import logo from '/Users/samkennedy/Desktop/brunch-bites/client/src/free-image-resizer-cropper.png';
 import Auth from "../../utils/auth";
+import Footer from '../Footer'
 
 const Header = () => {
   const logout = (event) => {
@@ -9,17 +11,13 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="">
-      <div className="">
+     <main className='homepage-background'>
+        <header className="home-header">
         <Link className="" to="/">
-          <h1 className="" style={{ fontSize: "3rem" }}>
-            Brunch Buddy
-          </h1>
+          <img className='logo' src={logo} alt="Logo" />
         </Link>
-        <p className="" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
-          Get your brunch on
-        </p>
-        <div>
+        
+        <div className="login-signup">
           {Auth.loggedIn() ? (
             <>
               <Link className="" to="/me">
@@ -30,18 +28,25 @@ const Header = () => {
               </button>
             </>
           ) : (
-            <>
+            <div className='fade-in-text'>
+            <button className="login">
               <Link className="" to="/login">
                 Login
               </Link>
+              </button>
+              <button className="signup">
               <Link className="" to="/signup">
                 Signup
               </Link>
-            </>
+              </button>
+              
+            </div>
+            
           )}
         </div>
-      </div>
-    </header>
+        <Footer />
+        </header>
+      </main>
   );
 };
 

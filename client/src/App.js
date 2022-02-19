@@ -42,7 +42,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="">
-          <Header />
+          {/* <Header /> */}
           <div className="">
             <Route exact path="/">
               <Home />
@@ -68,7 +68,7 @@ function App() {
               <Profile />
             </Route> */}
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
