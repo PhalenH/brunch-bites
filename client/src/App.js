@@ -63,10 +63,6 @@ function App() {
             <Route exact path="/profile/me">
               <Profile />
             </Route>
-          {/* do we need both of these */}
-            <Route exact path="/profile/:profileName">
-              <Profile />
-            </Route>
 
           </div>
           <Footer />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
@@ -47,7 +47,7 @@ const Signup = () => {
           <div className="">
             {data ? (
               <p>
-                Success! You may now head{" "}
+                Success!
                 <Redirect to="/profile/me" />;
               </p>
             ) : (
