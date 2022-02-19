@@ -41,9 +41,8 @@ const Login = (props) => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
+    <main className="login-background">
+        <div className="login-page">
           <h4 className="">Login</h4>
           <div className="">
             {data ? (
@@ -86,7 +85,6 @@ const Login = (props) => {
             )}
           </div>
         </div>
-      </div>
     </main>
   );
 };

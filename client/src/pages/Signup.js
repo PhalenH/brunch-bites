@@ -40,9 +40,8 @@ const Signup = () => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
+    <main className="signup-background">
+        <div className="signup-page">
           <h4 className="">Sign Up</h4>
           <div className="">
             {data ? (
@@ -85,7 +84,6 @@ const Signup = () => {
             )}
           </div>
         </div>
-      </div>
     </main>
   );
 };
