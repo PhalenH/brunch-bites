@@ -1,3 +1,14 @@
 [
-  
+  {
+    "name": "John One",
+    "password": "Welcome1"
+  },
+  {
+    "name": "Bob Two",
+    "password": "Welcome2"
+  },
+  {
+    "name": "Jane Three",
+    "password": "Welcome3"
+  }
 ]

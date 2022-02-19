@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Brunch1",
+    "location": "123 Broad street",
+    "price": "$$",
+    "url": "www.brunch1.com",
+    "rating": 4,
+    "comment": "good",
+    "visited": false
+  },
+  {
+    "name": "Brunch2",
+    "location": "456 Broad street",
+    "price": "$$$",
+    "url": "www.brunch2.com",
+    "rating": 3,
+    "comment": "bad",
+    "visited": false
+  },
+  {
+    "name": "Brunch3",
+    "location": "789 Broad street",
+    "price": "$$$$",
+    "url": "www.brunch3.com",
+    "rating": 5,
+    "comment": "best",
+    "visited": false
+  },
+  {
+    "name": "Brunch4",
+    "location": "123 Arch street",
+    "price": "$",
+    "url": "www.brunch4.com",
+    "myRating": 2,
+    "comment": "not great",
+    "dateVisited": "1/13/2022",
+    "visited": true
+  },
+  {
+    "name": "Brunch5",
+    "location": "456 Arch street",
+    "price": "$$",
+    "url": "www.brunch5.com",
+    "myRating": 1,
+    "comment": "bad",
+    "dateVisited": "1/20/2022",
+    "visited": true
+  },
+  {
+    "name": "Brunch6",
+    "location": "789 Arch street",
+    "price": "$$$$",
+    "url": "www.brunch6.com",
+    "myRating": 5,
+    "comment": "best",
+    "dateVisited": "1/27/2022",
+    "visited": true
+  }
+]
