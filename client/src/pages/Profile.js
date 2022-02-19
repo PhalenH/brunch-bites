@@ -1,33 +1,23 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+// import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import Header from "../components/Header";
 import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
 
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from "../utils/queries";
+import { QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
 const Profile = () => {
-  const { profileId } = useParams();
-
-  // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
-  const { loading, data } = useQuery(
-    profileId ? QUERY_ME: QUERY_SINGLE_PROFILE,
-    {
-      variables: { profileId: profileId },
-    }
-  );
+  console.log(Auth.loggedIn())
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const profile = data?.me || data?.profile || {};
-
-  // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-    return <Redirect to="/profile/me" />;
-  }
+  const { loading, data } = useQuery(QUERY_ME);
+  // console.log(data)
+  const profile = data?.me || {};
+  // console.log(profile)
 
   if (loading) {
     return <div>Loading...</div>;

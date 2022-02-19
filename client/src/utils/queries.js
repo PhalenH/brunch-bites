@@ -1,39 +1,39 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      name
-      toVisit {
-        _id
-        name
-        location
-        price
-        url
-        rating
-        comment
-      }
-      visited {
-        _id
-        name
-        location
-        price
-        url
-        myRating
-        comment
-        dateVisited
-      }
-    }
-  }
-`;
+// export const QUERY_SINGLE_PROFILE = gql`
+//   query singleProfile($profileId: ID!) {
+//     profile(profileId: $profileId) {
+//       _id
+//       name
+//       toVisitList {
+//         _id
+//         name
+//         location
+//         price
+//         url
+//         rating
+//         comment
+//       }
+//       visitedList {
+//         _id
+//         name
+//         location
+//         price
+//         url
+//         myRating
+//         comment
+//         dateVisited
+//       }
+//     }
+//   }
+// `;
 
 export const QUERY_ME = gql`
   query me {
     me {
       _id
       name
-      toVisit {
+      toVisitList {
         _id
         name
         location
@@ -42,7 +42,7 @@ export const QUERY_ME = gql`
         rating
         comment
       }
-      visited {
+      visitedList {
         _id
         name
         location
