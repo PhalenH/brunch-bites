@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 // import { useQuery } from "@apollo/client";
 
-import ADD_TO_VISIT from "../../utils/mutations";
+import { ADD_TO_VISIT } from "../../utils/mutations";
 
 const ResultsList = ({ results }) => {
   console.log(results);
@@ -45,29 +45,29 @@ const ResultsList = ({ results }) => {
         {results &&
           results.map((result) => (
             <form onSubmit={handleAddCard}>
-            <div key={result._id} className="">
-              <div className="">
-                <h4 className="">
-                  {result.name} <br />
-                  <ul>
-                    <li>{result.location.address1}</li>
-                    <li>{result.location.city}</li>
-                    <li>{result.location.zip_code}</li>
-                    <li>{result.location.state}</li>
-                    <li>{result.price}</li>
-                    <li>{result.rating}</li>
-                  </ul>
-                </h4>
-                <a className="" href={`${result.url}`}>
-                  View the yelp url.
-                </a>
+              <div key={result._id} className="">
+                <div className="">
+                  <h4 className="">
+                    {result.name} <br />
+                    <ul>
+                      <li>{result.location.address1}</li>
+                      <li>{result.location.city}</li>
+                      <li>{result.location.zip_code}</li>
+                      <li>{result.location.state}</li>
+                      <li>{result.price}</li>
+                      <li>{result.rating}</li>
+                    </ul>
+                  </h4>
+                  <a className="" href={`${result.url}`}>
+                    View the yelp url.
+                  </a>
+                </div>
+                <div className="">
+                  <button className="" type="submit">
+                    Add To you watch list
+                  </button>
+                </div>
               </div>
-              <div className="">
-                <button className="" type="submit">
-                  Add To you watch list
-                </button>
-              </div>
-            </div>
             </form>
           ))}
       </div>
