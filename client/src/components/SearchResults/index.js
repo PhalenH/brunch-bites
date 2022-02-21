@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ResultsList = ({ results }) => {
   console.log(results)
-  if (!results.length) {
+  if (!results) {
     return <h3>No Results found</h3>;
   }
 

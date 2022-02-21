@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 // import { useQuery } from "@apollo/client";
 
 const ToVisitList = ({ toVisitResults}) => {
-  if (!toVisitResults.length) {
-    return <h3>No Profiles Yet</h3>;
+  if (!toVisitResults) {
+    return <h3>Add a place to view list</h3>;
   }
 
   return (

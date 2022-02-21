@@ -1,5 +1,5 @@
 import React from "react";
-// import { Redirect, useParams } from "react-router-dom";
+
 import { useQuery } from "@apollo/client";
 
 import Header from "../components/Header";
@@ -13,7 +13,7 @@ import Auth from "../utils/auth";
 const Profile = () => {
   console.log(Auth.loggedIn())
 
-  // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
+  // Check if data is returning from the `QUERY_ME` query
   const { loading, data } = useQuery(QUERY_ME);
   // console.log(data)
   const profile = data?.me || {};
@@ -23,14 +23,17 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!profile?.name) {
-    return (
-      <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
-      </h4>
-    );
-  }
+  // if (!profile?.name) {
+  //   return (
+  //     <div>
+  //     <Header />
+  //     <h4>
+  //       You need to be logged in to see your profile page. Use the navigation
+  //       links above to sign up or log in!
+  //     </h4>
+  //     </div>
+  //   );
+  // }
 
   return (
     <section>

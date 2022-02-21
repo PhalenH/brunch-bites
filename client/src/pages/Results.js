@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 import Header from "../components/Header";
+import SearchBar from "../components/SearchBar/SearchBar";
 import SearchResults from "../components/SearchResults";
 import { QUERY_BRUNCH_SPOT_LIST } from "../utils/queries";
 
@@ -18,7 +19,10 @@ const Results = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
+            <div>
+            <SearchBar placeholder="Enter info" />
             <SearchResults results={brunchSpotList} />
+            </div>
           )}
         </div>
       </div>

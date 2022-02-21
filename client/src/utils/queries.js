@@ -1,33 +1,5 @@
 import { gql } from "@apollo/client";
 
-// export const QUERY_SINGLE_PROFILE = gql`
-//   query singleProfile($profileId: ID!) {
-//     profile(profileId: $profileId) {
-//       _id
-//       name
-//       toVisitList {
-//         _id
-//         name
-//         location
-//         price
-//         url
-//         rating
-//         comment
-//       }
-//       visitedList {
-//         _id
-//         name
-//         location
-//         price
-//         url
-//         myRating
-//         comment
-//         dateVisited
-//       }
-//     }
-//   }
-// `;
-
 export const QUERY_ME = gql`
   query me {
     me {
@@ -73,6 +45,34 @@ export const QUERY_BRUNCH_SPOT_LIST = gql`
     }
   }
 `;
+
+// export const QUERY_SINGLE_PROFILE = gql`
+//   query singleProfile($profileId: ID!) {
+//     profile(profileId: $profileId) {
+//       _id
+//       name
+//       toVisitList {
+//         _id
+//         name
+//         location
+//         price
+//         url
+//         rating
+//         comment
+//       }
+//       visitedList {
+//         _id
+//         name
+//         location
+//         price
+//         url
+//         myRating
+//         comment
+//         dateVisited
+//       }
+//     }
+//   }
+// `;
 
 // export const TO_VISIT = gql`
 //   query toVisit {
