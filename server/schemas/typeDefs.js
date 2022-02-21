@@ -5,8 +5,8 @@ const typeDefs = gql`
     _id: ID
     name: String
     password: String
-    toVisitList: [ToVisit]!
-    visitedList: [Visited]!
+    toVisitList: [ToVisit]
+    visitedList: [Visited]
   }
 
   type Auth {

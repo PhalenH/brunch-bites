@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const VistedList = ({ visitedResults}) => {
-  if (!visitedResults.length) {
-    return <h3>No Profiles Yet</h3>;
+  if (!visitedResults) {
+    return <h3>You aint been nowhere</h3>;
   }
 
   return (

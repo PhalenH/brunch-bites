@@ -12,13 +12,9 @@ const Header = () => {
     <header className="">
       <div className="">
         <Link className="" to="/">
-          <h1 className="" style={{ fontSize: "3rem" }}>
-            Brunch Buddy
-          </h1>
+          <h1 className="">Tech Friends</h1>
         </Link>
-        <p className="" style={{ fontSize: "1.75rem", fontWeight: "700" }}>
-          Get your brunch on
-        </p>
+        <p className="">Meet your new programming pals.</p>
         <div>
           {Auth.loggedIn() ? (
             <>

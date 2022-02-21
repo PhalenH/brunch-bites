@@ -1,0 +1,128 @@
+img {
+    height: 64px;
+    width: 64px;
+}
+
+.card-body {
+    background: #D8FE55
+}
+
+.list-group-item {
+    background-color: #FE809B;
+}
+
+.navbar {
+    background-color: #40EAC4;
+}
+
+/* h1 {
+    text-align: center;
+} */
+
+#searchDiv {
+    border-top: rgba(0,0,0,.7) 1px solid;
+    border-bottom: rgba(0,0,0,.7) 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+/* #userVisits {
+    border: black 3px solid;
+} */
+
+#containerToVisit {
+    border-right: rgba(0,0,0,.7) .5px solid;
+}
+
+#ToVisitList {
+    overflow-y: auto;
+    max-height: 1300px
+}
+
+#VisitedList {
+    overflow-y: auto;
+    max-height: 1300px
+}
+
+
+#containerVisited {
+    border-left: rgba(0,0,0,.7) .5px solid;
+}
+
+li {
+    padding: 3px;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+
+.scene {
+/* width: 200px;
+height: 260px; */
+border: 1px solid black;
+margin: 40px 0;
+/* perspective: 600px; */
+box-shadow: 5px 5px 28px 9px rgba(0,0,0,0.52);
+}
+
+.card {
+width: 100%;
+height: 100%;
+transition: transform 1s;
+transform-style: preserve-3d;
+/* position: relative; */
+}
+
+/* .card.is-flipped {
+transform: rotateY(180deg);
+}
+
+.card__face {
+position: absolute;
+width: 100%;
+height: 100%;
+color: white;
+text-align: center;
+font-weight: bold;
+font-size: 10px;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.card__face--front {
+background: #D8FE55;
+}
+
+.card__face--back {
+background: #FE809B;
+transform: rotateY(180deg);
+} */
+
+.personalRating {
+    background: white;
+}
+
+.rating {
+    /* position: relative; */
+    width: 360px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+    padding: 5px;
+ }
+ 
+ 
+ .rating__star {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #dabd18b2;
+    transition: filter linear .3s;
+ }
+ 
+ .rating__star:hover {
+    filter: drop-shadow(1px 1px 4px gold);
+ }

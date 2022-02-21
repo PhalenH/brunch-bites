@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
+import { Redirect } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
@@ -40,15 +41,14 @@ const Signup = () => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
+    <main className="signup-background">
+        <div className="signup-page">
           <h4 className="">Sign Up</h4>
           <div className="">
             {data ? (
               <p>
-                Success! You may now head{" "}
-                <Link to="/profile/me">back to the homepage.</Link>
+                Success!
+                <Redirect to="/profile/me" />;
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -69,7 +69,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className=""
+                  className="submit"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
@@ -85,7 +85,6 @@ const Signup = () => {
             )}
           </div>
         </div>
-      </div>
     </main>
   );
 };
