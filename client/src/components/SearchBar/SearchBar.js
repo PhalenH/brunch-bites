@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
-import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
+// import SearchIcon from "@material-ui/icons/Search";
+// import CloseIcon from "@material-ui/icons/Close";
 import { useQuery } from "@apollo/client";
-import { QUERY_BRUNCH_SPOT_LIST } from "../utils/queries";
+import { QUERY_BRUNCH_SPOT_LIST } from "../../utils/queries";
 // need to add the material-ui packages, should be good if not refer back to https://mui.com/components/icons/#main-content
 
 function SearchBar({ placeholder, searchData }) {
@@ -52,13 +52,13 @@ function SearchBar({ placeholder, searchData }) {
           value={wordEntered}
           onChange={handleFilter}
         />
-        <div className="searchIcon">
+        {/* <div className="searchIcon">
           {filteredData.length === 0 ? (
             <SearchIcon />
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
-        </div>
+        </div> */}
       </div>
       {filteredData.length !== 0 && (
         <div className="dataResult">

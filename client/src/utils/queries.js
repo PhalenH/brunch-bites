@@ -8,7 +8,12 @@ export const QUERY_ME = gql`
       toVisitList {
         _id
         name
-        location
+        location {
+            address1
+            city
+            zip_code
+            state
+          }
         price
         url
         rating
@@ -17,7 +22,12 @@ export const QUERY_ME = gql`
       visitedList {
         _id
         name
-        location
+        location {
+            address1
+            city
+            zip_code
+            state
+          }
         price
         url
         myRating

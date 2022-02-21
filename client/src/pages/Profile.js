@@ -41,9 +41,11 @@ const Profile = () => {
       <div>
         <h2 className="">Welcome </h2>
         <div>
+          To Visit:
           <ToVisitList toVisitResults={profile.tovisit} />
         </div>
         <div>
+          Visited:
           <VisitedList visitedResults={profile.visited} />
         </div>
       </div>

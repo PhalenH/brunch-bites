@@ -20,7 +20,7 @@ const Results = () => {
             <div>Loading...</div>
           ) : (
             <div>
-            <SearchBar placeholder="Enter info" />
+            {/* <SearchBar placeholder="Enter info" /> */}
             <SearchResults results={brunchSpotList} />
             </div>
           )}
