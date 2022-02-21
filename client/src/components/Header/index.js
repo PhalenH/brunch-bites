@@ -11,10 +11,8 @@ const Header = () => {
   return (
     <header className="">
       <div className="">
-        <Link className="" to="/">
-          <h1 className="">Tech Friends</h1>
-        </Link>
-        <p className="">Meet your new programming pals.</p>
+        <h1 className="">Brunch Bites</h1>
+        <p className="">Get your brunch on!</p>
         <div>
           {Auth.loggedIn() ? (
             <>
