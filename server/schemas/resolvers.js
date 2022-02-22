@@ -18,6 +18,7 @@ const resolvers = {
 
     profile: async (parent, { profileId }) => {
       let prof = await Profile.findOne({ _id: profileId }).populate("places");
+      prof = prof.toObject();
       return {
         ...prof,
         toVisitList: prof.places.filter((place) => (place.visited = false)),
@@ -26,10 +27,13 @@ const resolvers = {
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
+      console.log(context.user._id);
       if (context.user) {
         let prof = await Profile.findOne({ _id: context.user._id }).populate(
           "places"
         );
+        // need toObject to fix data serialization issue, returns plain object 
+        prof = prof.toObject();
         return {
           ...prof,
           toVisitList: prof.places.filter((place) => (place.visited = false)),
@@ -44,6 +48,7 @@ const resolvers = {
         let prof = await Profile.findOne({ _id: context.user._id }).populate(
           "places"
         );
+        prof = prof.toObject();
         return prof.places.filter((place) => (place.visited = false));
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -54,6 +59,7 @@ const resolvers = {
         let prof = await Profile.findOne({ _id: context.user._id }).populate(
           "places"
         );
+        prof = prof.toObject();
         return prof.places.filter((place) => (place.visited = true));
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -73,6 +79,7 @@ const resolvers = {
         },
         params: {
           location: `${city}`,
+          categories: 'breakfast_brunch',
         },
       });
 
@@ -135,6 +142,7 @@ const resolvers = {
 
         // add to the profile the place._id
         let prof = await Profile.findOne({ _id: profileId });
+        prof = prof.toObject();
         let found = prof.places.filter(
           (place) => place._id === placeRecord._id
         );
@@ -176,6 +184,7 @@ const resolvers = {
 
         // add to the profile the place._id
         let prof = await Profile.findOne({ _id: profileId });
+        prof = prof.toObject();
         let found = prof.places.filter(
           (place) => place._id === placeRecord._id
         );
