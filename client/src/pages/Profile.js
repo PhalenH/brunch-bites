@@ -15,31 +15,31 @@ const Profile = () => {
 
   // Check if data is returning from the `QUERY_ME` query
   const { loading, data } = useQuery(QUERY_ME);
-  // console.log(data)
+  console.log(data)
   const profile = data?.me || {};
-  // console.log(profile)
+  console.log(profile)
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  // if (!profile?.name) {
-  //   return (
-  //     <div>
-  //     <Header />
-  //     <h4>
-  //       You need to be logged in to see your profile page. Use the navigation
-  //       links above to sign up or log in!
-  //     </h4>
-  //     </div>
-  //   );
-  // }
+  if (!profile?.name) {
+    return (
+      <div>
+      <Header />
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+      </div>
+    );
+  }
 
   return (
     <section>
       <Header />
       <div>
-        <h2 className="">Welcome </h2>
+        <h2 className="">Here are your lists </h2>
         <div>
           To Visit:
           <ToVisitList toVisitResults={profile.tovisit} />
