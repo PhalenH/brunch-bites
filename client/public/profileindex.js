@@ -1,22 +1,5 @@
 console.log("Connected")
 
-// var rotateBtnBack = document.getElementById("btn-Rotate-to-back")
-// var rotateBtnFront = document.getElementById("btn-Rotate-to-front")
-
-// rotateBtnBack.addEventListener("click", function (e) {
-//     console.log("Flip to back")
-
-//     var card = document.querySelector('.card');
-//     card.classList.toggle('is-flipped');
-// })
-
-// rotateBtnFront.addEventListener("click", function (e) {
-//     console.log("Flip to front")
-
-//     var card = document.querySelector('.card');
-//     card.classList.toggle('is-flipped');
-// })
-
 const cards = document.querySelectorAll(".card");
 function flipCard(){
     console.log("IT WORKS LET'S GOOOOOOO")
