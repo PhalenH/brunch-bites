@@ -79,6 +79,7 @@ const resolvers = {
         },
         params: {
           location: `${city}`,
+          categories: 'breakfast_brunch',
         },
       });
 
