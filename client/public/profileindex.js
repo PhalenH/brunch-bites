@@ -1,4 +1,4 @@
-console.log("You did the bare minimum and connected your JS.")
+console.log("Connected")
 
 // var rotateBtnBack = document.getElementById("btn-Rotate-to-back")
 // var rotateBtnFront = document.getElementById("btn-Rotate-to-front")
@@ -17,23 +17,14 @@ console.log("You did the bare minimum and connected your JS.")
 //     card.classList.toggle('is-flipped');
 // })
 
-var rotateBtnBack = document.getElementsByClassName("flip-to-back");
-for (var i = 0; i < rotateBtnBack.length; i++) {
-    rotateBtnBack[i].addEventListener("click", function () {
-    console.log("Flip to back")
-
-    var card = document.querySelector('.card');
-    card.classList.toggle('is-flipped');    });
+const cards = document.querySelectorAll(".card");
+function flipCard(){
+    console.log("IT WORKS LET'S GOOOOOOO")
+    this.classList.toggle('is-flipped');
 }
 
-var rotateBtnFront = document.getElementsByClassName("flip-to-front");
-for (var i = 0; i < rotateBtnFront.length; i++) {
-    rotateBtnFront[i].addEventListener("click", function () {
-    console.log("Flip to front")
-
-    var card = document.querySelector('.card');
-    card.classList.toggle('is-flipped');    });
-}
+cards.forEach((card) =>
+card.addEventListener("click", flipCard))
 
 const ratingStars = [...document.getElementsByClassName("rating__star")];
 
