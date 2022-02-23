@@ -120,13 +120,16 @@ const resolvers = {
 
     addToVisit: async (
       parent,
-      { profileId, name, location, price, url, rating, comment },
+      { profileId, name, address1, city, zip_code, state, price, url, rating, comment },
       context
     ) => {
       if (context.user) {
         let values = {
           name,
-          location,
+          address1, 
+          city, 
+          zip_code, 
+          state,
           price,
           url,
           rating,
@@ -162,13 +165,16 @@ const resolvers = {
 
     addVisited: async (
       parent,
-      { profileId, name, location, price, url, myRating, comment, dateVisited },
+      { profileId, name, address1, city, zip_code, state, price, url, myRating, comment, dateVisited },
       context
     ) => {
       if (context.user) {
         let values = {
           name,
-          location,
+          address1, 
+          city, 
+          zip_code, 
+          state,
           price,
           url,
           myRating,

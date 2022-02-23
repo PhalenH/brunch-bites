@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
@@ -12,7 +12,10 @@ function SearchBar({ placeholder }) {
   const [wordEntered, setWordEntered] = useState("");
   const [cardState, setCardState] = useState({
     name: "",
-    location: "",
+    address1: "",
+    city: "",
+    zip_code: "",
+    state: "",
     price: "",
     url: "",
     rating: "",
@@ -26,7 +29,7 @@ function SearchBar({ placeholder }) {
   });
 
   const filteredBrunchData = data?.brunchSpotList || [];
-  console.log(filteredBrunchData);
+  // console.log(filteredBrunchData);
   const handleFilter = (event) => {
     event.preventDefault();
     console.log(wordEntered);
@@ -42,8 +45,8 @@ function SearchBar({ placeholder }) {
       });
       console.log(JSON.stringify(data));
       // window.location.reload();
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -82,40 +85,38 @@ function SearchBar({ placeholder }) {
       {filteredBrunchData.length !== 0 && (
         <div className="">
           {/* might need key after result */}
-          {filteredBrunchData.slice(0, 20).map((result) => {
-            return (
-              <form onClick={handleAddCard}>
-                <div key={result._id} className="">
+          {filteredBrunchData.slice(0, 20).map((result) => (
+            <div key={result._id} className="">
+            <form onSubmit={handleAddCard}>
+                <div className="">
                   <div className="">
-                    <h4 className="">
-                      {result.name} <br />
-                      <ul>
-                        <li>{result.location.address1}</li>
-                        <li>{result.location.city}</li>
-                        <li>{result.location.zip_code}</li>
-                        <li>{result.location.state}</li>
-                        <li>{result.price}</li>
-                        <li>{result.rating}</li>
-                      </ul>
-                    </h4>
-                    <a
-                      className=""
-                      href={`${result.url}`}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      View the yelp url.
-                    </a>
+                    <h3>{result.name}</h3> <br />
+                    <section>
+                      <h4>{result.location.address1}</h4>
+                      <h4>{result.location.city}</h4>
+                      <h4>{result.location.zip_code}</h4>
+                      <h4>{result.location.state}</h4>
+                      <h4>{result.price}</h4>
+                      <h4>{result.rating}</h4>
+                    </section>
                   </div>
-                  <div className="">
-                    <button className="" type="submit">
-                      Add To you watch list
-                    </button>
-                  </div>
+                  <a
+                    className=""
+                    href={`${result.url}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    View the yelp url.
+                  </a>
                 </div>
-              </form>
-            );
-          })}
+                <div className="">
+                  <button className="" type="submit">
+                    Add To you watch list
+                  </button>
+                </div>
+            </form>
+            </div>
+          ))}
         </div>
       )}
     </div>
