@@ -32,7 +32,7 @@ const resolvers = {
         let prof = await Profile.findOne({ _id: context.user._id }).populate(
           "places"
         );
-        // need toObject to fix data serialization issue, returns plain object 
+        // need toObject to fix data serialization issue, returns plain object
         prof = prof.toObject();
         return {
           ...prof,
@@ -79,7 +79,7 @@ const resolvers = {
         },
         params: {
           location: `${city}`,
-          categories: 'breakfast_brunch',
+          categories: "breakfast_brunch",
         },
       });
 
@@ -143,6 +143,7 @@ const resolvers = {
         // add to the profile the place._id
         let prof = await Profile.findOne({ _id: profileId });
         prof = prof.toObject();
+
         let found = prof.places.filter(
           (place) => place._id === placeRecord._id
         );
@@ -185,6 +186,7 @@ const resolvers = {
         // add to the profile the place._id
         let prof = await Profile.findOne({ _id: profileId });
         prof = prof.toObject();
+        
         let found = prof.places.filter(
           (place) => place._id === placeRecord._id
         );
