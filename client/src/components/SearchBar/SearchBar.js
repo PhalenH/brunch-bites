@@ -3,11 +3,7 @@ import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import { useQuery } from "@apollo/client";
-<<<<<<< HEAD
 import {QUERY_BRUNCH_SPOT_LIST} from "../../utils/queries";
-=======
-import { QUERY_BRUNCH_SPOT_LIST } from "../utils/queries";
->>>>>>> 9e33c871a72a0699317df67f43bbe7b1c5e78cc1
 // need to add the material-ui packages, should be good if not refer back to https://mui.com/components/icons/#main-content
 
 function SearchBar({ placeholder, searchData }) {
