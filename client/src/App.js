@@ -63,9 +63,9 @@ function App() {
             <Route exact path="/profile/me">
               <Profile />
             </Route>
-
+            <Footer />
           </div>
-          <Footer />
+    
         </div>
       </Router>
     </ApolloProvider>
