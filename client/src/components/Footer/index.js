@@ -17,6 +17,7 @@ const Footer = () => {
         )}
         </div>
         <h5>&copy; {new Date().getFullYear()} - Brunch Bites</h5>
+        <h5>Created by Brunch Bros inc &#8482;</h5>
       
     </footer>
   );

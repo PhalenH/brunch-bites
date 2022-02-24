@@ -53,6 +53,10 @@ const PlacesSchema = new Schema({
     type: String,
     trim: true,
   },
+  image: {
+    type: String,
+    trim: true,
+  },
   visited: {
     type: Boolean,
     default: false,
