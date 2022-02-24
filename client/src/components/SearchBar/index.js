@@ -32,7 +32,7 @@ function SearchBar({ placeholder }) {
   const handleAddCard = async (event, result) => {
     event.preventDefault();
     try {
-      console.log(JSON.stringify(result.location));
+      console.log(result);
       console.log(profile._id);
 
       const { data } = await addToVisit({

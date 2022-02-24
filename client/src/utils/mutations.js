@@ -50,15 +50,19 @@ export const ADD_TO_VISIT = gql`
       comment: $comment
     ) {
       _id
-      name
-      address1
-      city
-      zip_code
-      state
-      price
-      url
-      rating
-      comment
+      toVisitList {
+        name
+        location {
+          address1
+          city
+          zip_code
+          state
+        }
+        price
+        url
+        rating
+        comment
+      }
     }
   }
 `;
@@ -91,16 +95,20 @@ export const ADD_VISITED = gql`
       dateVisited: $dateVisited
     ) {
       _id
-      name
-      address1
-      city
-      zip_code
-      state
-      price
-      url
-      myRating
-      comment
-      dateVisited
+      visitedList {
+        name
+        location {
+          address1
+          city
+          zip_code
+          state
+        }
+        price
+        url
+        myRating
+        comment
+        dateVisited
+      }
     }
   }
 `;
