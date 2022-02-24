@@ -50,11 +50,11 @@ const Profile = () => {
         <h2 className="">Here are your lists </h2>
         <div>
           To Visit:
-          <ToVisitList toVisitResults={profile.tovisit} />
+          <ToVisitList toVisitResults={profile.tovisitList} />
         </div>
         <div>
           Visited:
-          <VisitedList visitedResults={profile.visited} />
+          <VisitedList visitedResults={profile.visitedList} />
         </div>
       </div>
     </section>
