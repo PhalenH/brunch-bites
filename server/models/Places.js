@@ -6,7 +6,22 @@ const PlacesSchema = new Schema({
     required: true,
     trim: true,
   },
-  location: {
+  address1: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  city: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  zip_code: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  state: {
     type: String,
     required: true,
     trim: true,
@@ -35,6 +50,10 @@ const PlacesSchema = new Schema({
     maxlength: 180,
   },
   dateVisited: {
+    type: String,
+    trim: true,
+  },
+  image: {
     type: String,
     trim: true,
   },

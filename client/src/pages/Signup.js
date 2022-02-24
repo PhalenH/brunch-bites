@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
@@ -84,6 +84,9 @@ const Signup = () => {
               </div>
             )}
           </div>
+          <div className="sign-up-here">If you already have an account login <Link className="" to="/login">
+                HERE
+              </Link></div>
         </div>
     </main>
   );

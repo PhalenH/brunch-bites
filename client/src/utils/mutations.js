@@ -28,7 +28,10 @@ export const ADD_TO_VISIT = gql`
   mutation addToVisit(
     $profileId: ID!
     $name: String!
-    $location: String!
+    $address1: String!
+    $city: String!
+    $zip_code: String!
+    $state: String!
     $price: String
     $url: String
     $rating: Float
@@ -37,19 +40,29 @@ export const ADD_TO_VISIT = gql`
     addToVisit(
       profileId: $profileId
       name: $name
-      location: $location
+      address1: $address1
+      city: $city
+      zip_code: $zip_code
+      state: $state
       price: $price
       url: $url
       rating: $rating
       comment: $comment
     ) {
       _id
-      name
-      location
-      price
-      url
-      rating
-      comment
+      toVisitList {
+        name
+        location {
+          address1
+          city
+          zip_code
+          state
+        }
+        price
+        url
+        rating
+        comment
+      }
     }
   }
 `;
@@ -58,7 +71,10 @@ export const ADD_VISITED = gql`
   mutation addVisited(
     $profileId: ID!
     $name: String!
-    $location: String!
+    $address1: String!
+    $city: String!
+    $zip_code: String!
+    $state: String!
     $price: String
     $url: String
     $myRating: Float
@@ -68,7 +84,10 @@ export const ADD_VISITED = gql`
     addVisited(
       profileId: $profileId
       name: $name
-      location: $location
+      address1: $address1
+      city: $city
+      zip_code: $zip_code
+      state: $state
       price: $price
       url: $url
       myRating: $myRating
@@ -76,13 +95,20 @@ export const ADD_VISITED = gql`
       dateVisited: $dateVisited
     ) {
       _id
-      name
-      location
-      price
-      url
-      myRating
-      comment
-      dateVisited
+      visitedList {
+        name
+        location {
+          address1
+          city
+          zip_code
+          state
+        }
+        price
+        url
+        myRating
+        comment
+        dateVisited
+      }
     }
   }
 `;

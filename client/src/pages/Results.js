@@ -1,6 +1,6 @@
 import React from "react";
 // import { Redirect, useParams, Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
@@ -15,7 +15,7 @@ const Results = () => {
         <Header />
         <div className="">
             <div>
-            <SearchBar placeholder="Enter info" />
+            <SearchBar placeholder="Search by city or town" />
             </div>
         </div>
       </div>
