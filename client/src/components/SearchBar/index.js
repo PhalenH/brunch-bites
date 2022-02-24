@@ -4,26 +4,18 @@ import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_BRUNCH_SPOT_LIST } from "../../utils/queries";
+import { QUERY_BRUNCH_SPOT_LIST, QUERY_ME } from "../../utils/queries";
 import { ADD_TO_VISIT } from "../../utils/mutations";
 
 function SearchBar({ placeholder }) {
   const [gotResults, setGotResults] = useState("");
   const [wordEntered, setWordEntered] = useState("");
-  const [cardState, setCardState] = useState({
-    name: "",
-    address1: "",
-    city: "",
-    zip_code: "",
-    state: "",
-    price: "",
-    url: "",
-    rating: "",
-    comment: "",
-  });
+
   // Set up mutation with an option to handle errors
   const [addToVisit, { error }] = useMutation(ADD_TO_VISIT);
 
+  const { loading: loading2, data: data2 } = useQuery(QUERY_ME);
+  const profile = data2?.me || {};
   const { loading, data } = useQuery(QUERY_BRUNCH_SPOT_LIST, {
     variables: { city: gotResults },
   });
@@ -37,14 +29,26 @@ function SearchBar({ placeholder }) {
   };
 
   // On click event, perform mutation and pass in card data object as arguments
-  const handleAddCard = async (event) => {
+  const handleAddCard = async (event, result) => {
     event.preventDefault();
     try {
+      console.log(JSON.stringify(result.location));
+      console.log(profile._id);
+
       const { data } = await addToVisit({
-        variables: { ...cardState },
+        variables: {
+          profileId: profile._id,
+          name: result.name,
+          address1: result.location.address1,
+          city: result.location.city,
+          zip_code: result.location.zip_code,
+          state: result.location.state,
+          price: result.price,
+          url: result.url,
+          rating: result.rating,
+        },
       });
       console.log(JSON.stringify(data));
-      // window.location.reload();
     } catch (error) {
       console.error(error);
     }
@@ -87,7 +91,11 @@ function SearchBar({ placeholder }) {
           {/* might need key after result */}
           {filteredBrunchData.slice(0, 20).map((result) => (
             <div key={result._id} className="">
-            <form onSubmit={handleAddCard}>
+              <form
+                onSubmit={(event) => {
+                  handleAddCard(event, result);
+                }}
+              >
                 <div className="">
                   <div className="">
                     <h3>{result.name}</h3> <br />
@@ -114,7 +122,7 @@ function SearchBar({ placeholder }) {
                     Add To you watch list
                   </button>
                 </div>
-            </form>
+              </form>
             </div>
           ))}
         </div>
@@ -124,3 +132,15 @@ function SearchBar({ placeholder }) {
 }
 
 export default SearchBar;
+
+// const [cardState, setCardState] = useState({
+  //   name: "",
+  //   address1: "",
+  //   city: "",
+  //   zip_code: "",
+  //   state: "",
+  //   price: "",
+  //   url: "",
+  //   rating: "",
+  //   comment: "",
+  // });

@@ -70,7 +70,10 @@ const typeDefs = gql`
     addToVisit(
       profileId: ID!
       name: String!
-      location: String!
+      address1: String!
+      city: String!
+      zip_code: String!
+      state: String!
       price: String
       url: String
       rating: Float
@@ -80,7 +83,10 @@ const typeDefs = gql`
     addVisited(
       profileId: ID!
       name: String!
-      location: String!
+      address1: String!
+      city: String!
+      zip_code: String!
+      state: String!
       price: String
       url: String
       myRating: Float
