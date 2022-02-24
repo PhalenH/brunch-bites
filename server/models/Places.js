@@ -53,7 +53,7 @@ const PlacesSchema = new Schema({
     type: String,
     trim: true,
   },
-  image: {
+  image_url: {
     type: String,
     trim: true,
   },

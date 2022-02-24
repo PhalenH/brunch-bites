@@ -22,6 +22,7 @@ const typeDefs = gql`
     url: String
     rating: Float
     comment: String
+    image_url: String
   }
 
   type Visited {
@@ -42,6 +43,7 @@ const typeDefs = gql`
     price: String
     rating: Float
     url: String
+    image_url: String
   }
 
   type Location {
@@ -78,6 +80,7 @@ const typeDefs = gql`
       url: String
       rating: Float
       comment: String
+      image_url: String
     ): Profile
 
     addVisited(
@@ -92,6 +95,7 @@ const typeDefs = gql`
       myRating: Float
       comment: String
       dateVisited: String
+      image_url: String
     ): Profile
 
     removeToVisit(profileId: ID!, placeId: ID!): Profile

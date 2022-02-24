@@ -9,11 +9,11 @@ export const QUERY_ME = gql`
         _id
         name
         location {
-            address1
-            city
-            zip_code
-            state
-          }
+          address1
+          city
+          zip_code
+          state
+        }
         price
         url
         rating
@@ -23,11 +23,11 @@ export const QUERY_ME = gql`
         _id
         name
         location {
-            address1
-            city
-            zip_code
-            state
-          }
+          address1
+          city
+          zip_code
+          state
+        }
         price
         url
         myRating
@@ -52,6 +52,7 @@ export const QUERY_BRUNCH_SPOT_LIST = gql`
       price
       rating
       url
+      image_url
     }
   }
 `;
