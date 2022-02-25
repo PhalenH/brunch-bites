@@ -80,7 +80,7 @@ export const ADD_VISITED = gql`
     $url: String
     $myRating: Float
     $comment: String
-    $dateVisited: Date
+    $dateVisited: String
     $image_url: String
   ) {
     addVisited(
@@ -116,19 +116,17 @@ export const ADD_VISITED = gql`
 `;
 
 export const REMOVE_TO_VISIT = gql`
-  mutation removeToVisit($profileId: ID!, $placeId: ID!) {
+  mutation removeToVisit($profileId: ID!, $placeId: String!) {
     removeToVisit(profileId: $profileId, placeId: $placeId) {
       _id
-      name
     }
   }
 `;
 
 export const REMOVE_VISITED = gql`
-  mutation removeVisited($profileId: ID!, $placeId: ID!) {
+  mutation removeVisited($profileId: ID!, $placeId: String!) {
     removeVisited(profileId: $profileId, placeId: $placeId) {
       _id
-      name
     }
   }
 `;

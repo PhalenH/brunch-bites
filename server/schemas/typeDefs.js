@@ -105,8 +105,8 @@ const typeDefs = gql`
       image_url: String
     ): Profile
 
-    removeToVisit(profileId: ID!, placeId: ID!): Profile
-    removeVisited(profileId: ID!, placeId: ID!): Profile
+    removeToVisit(profileId: ID!, placeId: String!): Profile
+    removeVisited(profileId: ID!, placeId: String!): Profile
   }
 `;
 

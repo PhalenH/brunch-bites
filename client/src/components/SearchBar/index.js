@@ -66,12 +66,12 @@ function SearchBar({ placeholder }) {
   if (!filteredBrunchData) {
     return <h3>No Results found</h3>;
   }
+
   return (
     <div>
       <form className="search" onSubmit={handleFilter}>
         <div className="searchInputs">
           {" "}
-          {gotResults}
           <input
             type="text"
             placeholder={placeholder}
@@ -88,10 +88,9 @@ function SearchBar({ placeholder }) {
         </div>
       </form>
       {filteredBrunchData.length !== 0 && (
-        <div className="">
-          {/* might need key after result */}
+        <div className="resultContainer">
           {filteredBrunchData.slice(0, 20).map((result) => (
-            <div key={result._id} className="">
+            <div key={result._id} className="brunchCard">
               <form
                 onSubmit={(event) => {
                   handleAddCard(event, result);
@@ -102,12 +101,12 @@ function SearchBar({ placeholder }) {
                     <img src={result.image_url} alt="stock-img"></img>
                     <h3>{result.name}</h3> <br />
                     <section>
-                      <h4>{result.location.address1}</h4>
-                      <h4>{result.location.city}</h4>
-                      <h4>{result.location.zip_code}</h4>
-                      <h4>{result.location.state}</h4>
-                      <h4>{result.price}</h4>
-                      <h4>{result.rating}</h4>
+                      <p>{result.location.address1}</p>
+                      <p>{result.location.city}</p>
+                      <p>{result.location.zip_code}</p>
+                      <p>{result.location.state}</p>
+                      <p>{result.price}</p>
+                      <p>{result.rating}</p>
                     </section>
                   </div>
                   <a
