@@ -1,0 +1,81 @@
+img {
+    height: 50%;
+    width: 50%;
+  }
+  
+/* style */
+.col-4 { color: #fff; padding-bottom: 18px; padding-top: 18px; margin: 10px;}
+.col-4:nth-child(3n+1) { background: #c69; } /*1st then every 3rd*/
+.col-4:nth-child(3n+2) { background: #c69; } /*2nd then every 3rd*/
+.col-4:nth-child(3n+3) { background: #c69; } /*3rd then every 3rd*/
+
+.card {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.card-title{
+  color: black;
+}
+
+.card-text {
+  color: black;
+  word-wrap: break-word;
+  font-size: 20px;
+}
+
+.list-group-item {
+  word-wrap: break-word;
+  font-size: 20px
+}
+
+div.scrollmenu {
+  /* background-color: #333; */
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1400px;
+}
+
+div.scrollmenu div {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+#container {
+  margin-left: 45px;
+}
+
+#container-to-visit {
+  margin-left: 45px;
+}
+
+#slideLeft, #slideRight {
+  margin-left: 10x;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.header-container {
+  margin-left: 45px;
+  /* border: black 3px solid; */
+  display: inline-block
+}
+
+.header-container h3 {
+  position: absolute;
+  /* border: black 3px solid; */
+  margin-bottom: 5px;
+}
+
+.button-container {
+  margin-left: 850px;
+  /* border: black 3px solid; */
+}
+
+.btn {
+  margin-left: 5x;
+  margin-right: 5px;
+}
