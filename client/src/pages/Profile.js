@@ -2,7 +2,7 @@ import React from "react";
 // import "./profile.css";
 
 import { useQuery } from "@apollo/client";
-
+import SearchBar from "../components/SearchBar";
 import Header from "../components/Header";
 import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
@@ -40,7 +40,7 @@ const Profile = () => {
     <section>
       <Header />
       <div>
-        <h2 className="">Here are your lists </h2>
+        <SearchBar searchbarResults={profile.SearchBar}/>
         <div>
           To Visit:
           <ToVisitList toVisitResults={profile.toVisitList} />
