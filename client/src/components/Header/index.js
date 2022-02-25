@@ -23,7 +23,7 @@ const Header = ({ location }) => {
                 Search Page
               </Link> </button>
   
-              <button> <Link className="ViewProfile" to="/me">
+              <button> <Link className="ViewProfile" to="/profile/me">
                 View My Profile
               </Link> </button>
               </div>

@@ -23,11 +23,11 @@ const ResultsList = ({ results }) => {
   const handleAddCard = async (event) => {
     event.preventDefault();
     try {
-      const { data } = addToVisit({
+      const { data } = await addToVisit({
         variables: { ...cardState },
       });
       console.log(JSON.stringify(data));
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.error(err);
     }
