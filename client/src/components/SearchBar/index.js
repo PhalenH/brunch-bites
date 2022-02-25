@@ -33,7 +33,7 @@ function SearchBar({ placeholder }) {
     event.preventDefault();
     try {
       console.log(result);
-      console.log(profile._id);
+      console.log(result.image_url);
 
       const { data } = await addToVisit({
         variables: {
@@ -46,6 +46,7 @@ function SearchBar({ placeholder }) {
           price: result.price,
           url: result.url,
           rating: result.rating,
+          image_url: result.image_url
         },
       });
       console.log(JSON.stringify(data));
@@ -98,6 +99,7 @@ function SearchBar({ placeholder }) {
               >
                 <div className="">
                   <div className="">
+                    <img src={result.image_url} alt="stock-img"></img>
                     <h3>{result.name}</h3> <br />
                     <section>
                       <h4>{result.location.address1}</h4>

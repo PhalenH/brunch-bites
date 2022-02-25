@@ -36,6 +36,7 @@ export const ADD_TO_VISIT = gql`
     $url: String
     $rating: Float
     $comment: String
+    $image_url: String
   ) {
     addToVisit(
       profileId: $profileId
@@ -48,20 +49,20 @@ export const ADD_TO_VISIT = gql`
       url: $url
       rating: $rating
       comment: $comment
+      image_url: $image_url
     ) {
       _id
       toVisitList {
         name
-        location {
-          address1
-          city
-          zip_code
-          state
-        }
+        address1
+        city
+        zip_code
+        state
         price
         url
         rating
         comment
+        image_url
       }
     }
   }
@@ -80,6 +81,7 @@ export const ADD_VISITED = gql`
     $myRating: Float
     $comment: String
     $dateVisited: Date
+    $image_url: String
   ) {
     addVisited(
       profileId: $profileId
@@ -93,21 +95,21 @@ export const ADD_VISITED = gql`
       myRating: $myRating
       comment: $comment
       dateVisited: $dateVisited
+      image_url: $image_url
     ) {
       _id
       visitedList {
         name
-        location {
-          address1
-          city
-          zip_code
-          state
-        }
+        address1
+        city
+        zip_code
+        state
         price
         url
         myRating
         comment
         dateVisited
+        image_url
       }
     }
   }
