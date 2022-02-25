@@ -114,7 +114,7 @@ const VistedList = ({ visitedResults }) => {
       <div className="scrollmenu" id="container-visited">
         {visitedResults &&
           visitedResults.map((visited) => (
-            <div className="col-4">
+            <div className="col-4" key={visited._id}>
               <div className="card" style={styles.card}>
                 <div className="card-body">
                   <button type="button" className="btn btn-dark" onClick={(event) => {handleRemoveVisited(event, visited);}}>
@@ -123,14 +123,14 @@ const VistedList = ({ visitedResults }) => {
                 </div>
                 <img
                   className="card-img-top"
-                  src="./placeholder.png"
+                  src={visited.image_url}
                   alt="brunch-card-img"
                 />
                 <div className="card-body">
                   <h5 className="card-title">{visited.name}</h5>
                   <h5>
                     {" "}
-                    <a className="" href={`${visited.url}`}>
+                    <a className="card-title" href={`${visited.url}`}>
                       View the yelp url.
                     </a>
                   </h5>
