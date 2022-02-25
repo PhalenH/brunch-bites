@@ -9,16 +9,10 @@ import VisitedList from "../components/VisitedList";
 
 import { QUERY_ME } from "../utils/queries";
 
-// import Auth from "../utils/auth";
-
 const Profile = () => {
-  
   // Check if data is returning from the `QUERY_ME` query
   const { loading, data } = useQuery(QUERY_ME);
-  // console.log(data);
   const profile = data?.me || {};
-  // console.log(profile);
-  // console.log(profile.toVisitList);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -40,13 +34,10 @@ const Profile = () => {
     <section>
       <Header />
       <div>
-        <SearchBar searchbarResults={profile.SearchBar}/>
         <div>
-          To Visit:
           <ToVisitList toVisitResults={profile.toVisitList} />
         </div>
         <div>
-          Visited:
           <VisitedList visitedResults={profile.visitedList} />
         </div>
       </div>
