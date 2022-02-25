@@ -1,5 +1,6 @@
 import React from "react";
-// import "..ToVisitList/ToVisit.css";
+import "./Visited.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 
 const styles = {
@@ -13,6 +14,57 @@ const VistedList = ({ visitedResults }) => {
   // if (!visitedResults) {
   //   return <h3>You aint been nowhere</h3>;
   // }
+  // calculate size of container
+  const handleButtonRight = ()=> {
+    const buttonRight = document.getElementById('slideRight-Visited');
+  
+    buttonRight.onclick = function () {
+    document.getElementById('container-visited').scrollLeft += 1000;
+    console.log("click right Visited")
+    };
+  }
+  
+  const handleButtonLeft = ()=> {
+     const buttonLeft = document.getElementById('slideLeft-Visited');
+  
+     buttonLeft.onclick = function () {
+     document.getElementById('container-visited').scrollLeft -= 1000;
+     console.log("click left Visited")
+     };
+  }
+
+  const starRating = () => {
+    const ratingStars = [...document.getElementsByClassName("rating_star")];
+    const ratingResult = document.querySelector(".rating_result");
+
+    printRatingResult(ratingResult);
+
+    function executeRating(stars, result) {
+      const starClassActive = "rating_star bi-star-fill";
+      const starClassUnactive = "rating_star bi bi-star";
+      const starsLength = stars.length;
+      let i;
+      stars.map((star) => {
+        star.onclick = () => {
+          i = stars.indexOf(star);
+
+          if (star.className.indexOf(starClassUnactive) !== -1) {
+            printRatingResult(result, i + 1);
+            for (i; i >= 0; --i) stars[i].className = starClassActive;
+          } else {
+            printRatingResult(result, i);
+            for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+          }
+        };
+      });
+    }
+
+    function printRatingResult(result) { }
+
+    executeRating(ratingStars);
+
+  }
+  
 
   return (
     <div>
@@ -22,8 +74,8 @@ const VistedList = ({ visitedResults }) => {
       <div className="header-container">
         <h3>Visited</h3>
         <div className="button-container">
-          <button type="button" className="btn btn-dark" id="slideLeft"><i className="bi bi-arrow-left-circle"></i>Left</button>
-          <button type="button" className="btn btn-dark" id="slideRight"><i className="bi bi-arrow-right-circle"></i>Right</button>
+          <button type="button" className="btn btn-dark" id="slideLeft-Visited"><i className="bi bi-arrow-left-circle" onClick={handleButtonLeft}></i>Left</button>
+          <button type="button" className="btn btn-dark" id="slideRight-Visited"><i className="bi bi-arrow-right-circle" onClick={handleButtonRight}></i>Right</button>
         </div>
       </div>
 
@@ -31,7 +83,7 @@ const VistedList = ({ visitedResults }) => {
       <div className="">
         {/* {visitedResults &&
           visitedResults.map((visited) => ( */}
-      <div className="scrollmenu" id="container">
+      <div className="scrollmenu" id="container-visited">
         <div className="col-4">
           <div className="card" style={styles.card}>
             <div className="card-body">
@@ -46,14 +98,14 @@ const VistedList = ({ visitedResults }) => {
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item"> Personal Rating: 
-                  {/* <div className="rating">
+                  <div className="rating" onClick={starRating}>
                     <span className="rating_result"></span>
                     <i className="rating_star bi bi-star"></i>
                     <i className="rating_star bi bi-star"></i>
                     <i className="rating_star bi bi-star"></i>
                     <i className="rating_star bi bi-star"></i>
                     <i className="rating_star bi bi-star"></i>
-                  </div> */}
+                  </div>
                 </li>
               </ul>
           </div>
@@ -82,7 +134,16 @@ const VistedList = ({ visitedResults }) => {
                 <h5 className="card-title">Restaurant Name 3</h5>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Rating: ****</li>
+                <li className="list-group-item"> Personal Rating: 
+                  <div className="rating" onClick={starRating}>
+                    <span className="rating_result"></span>
+                    <i className="rating_star bi bi-star"></i>
+                    <i className="rating_star bi bi-star"></i>
+                    <i className="rating_star bi bi-star"></i>
+                    <i className="rating_star bi bi-star"></i>
+                    <i className="rating_star bi bi-star"></i>
+                  </div>
+                </li>
               </ul>
           </div>
         </div>

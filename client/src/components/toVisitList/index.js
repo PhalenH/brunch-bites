@@ -13,6 +13,26 @@ const ToVisitList = ({ toVisitResults }) => {
   //   return <h3>Add a place to view list</h3>;
   // }
   
+// create a function up here to handle the click events for the buttons
+// implemenet that function as an onclick event in a button
+
+const handleButtonRight = ()=> {
+  const buttonRight = document.getElementById('slideRight-ToVisit');
+
+  buttonRight.onclick = function () {
+  document.getElementById('container-to-visit').scrollLeft += 1000;
+  console.log("click right ToVisit")
+  };
+}
+
+const handleButtonLeft = ()=> {
+   const buttonLeft = document.getElementById('slideLeft-ToVisit');
+
+   buttonLeft.onclick = function () {
+   document.getElementById('container-to-visit').scrollLeft -= 1000;
+   console.log("click left ToVisit")
+   };
+}
 
   return (
 <div>
@@ -22,12 +42,12 @@ const ToVisitList = ({ toVisitResults }) => {
         <div className="header-container">
           <h3>To Visit</h3>
           <div className="button-container">
-            <button type="button" className="btn btn-dark" id="slideLeft"><i className="bi bi-arrow-left-circle"></i>Left</button>
-            <button type="button" className="btn btn-dark" id="slideRight"><i className="bi bi-arrow-right-circle"></i>Right</button>
+            <button type="button" className="btn btn-dark" id="slideLeft-ToVisit" onClick={handleButtonLeft}><i className="bi bi-arrow-left-circle"></i></button>
+            <button type="button" className="btn btn-dark" id="slideRight-ToVisit" onClick={handleButtonRight}><i className="bi bi-arrow-right-circle"></i></button>
           </div>
         </div>
 
-        <div className="scrollmenu" id="container">
+        <div className="scrollmenu" id="container-to-visit">
           <div className="col-4">
             <div className="card" style={styles.card}>
               <div className="internal-button-container">

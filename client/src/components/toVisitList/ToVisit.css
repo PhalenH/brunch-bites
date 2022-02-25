@@ -4,10 +4,10 @@ img {
   }
   
 /* style */
-.col-4 { color: #fff; padding-bottom: 18px; padding-top: 18px; }
+.col-4 { color: #fff; padding-bottom: 18px; padding-top: 18px; margin: 10px;}
 .col-4:nth-child(3n+1) { background: #c69; } /*1st then every 3rd*/
-.col-4:nth-child(3n+2) { background: #9c6; } /*2nd then every 3rd*/
-.col-4:nth-child(3n+3) { background: #69c; } /*3rd then every 3rd*/
+.col-4:nth-child(3n+2) { background: #c69; } /*2nd then every 3rd*/
+.col-4:nth-child(3n+3) { background: #c69; } /*3rd then every 3rd*/
 
 .card {
   max-width: 100%;
@@ -30,10 +30,10 @@ img {
 }
 
 div.scrollmenu {
-  background-color: #333;
-  overflow: scroll;
+  /* background-color: #333; */
+  overflow: hidden;
   white-space: nowrap;
-  width: 1000px;
+  width: 1400px;
 }
 
 div.scrollmenu div {
@@ -45,6 +45,10 @@ div.scrollmenu div {
 }
 
 #container {
+  margin-left: 45px;
+}
+
+#container-to-visit {
   margin-left: 45px;
 }
 
