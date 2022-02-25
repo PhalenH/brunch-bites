@@ -15,7 +15,7 @@ const Results = () => {
         <Header />
         <div className="">
             <div>
-            <SearchBar placeholder="Enter info" />
+            <SearchBar placeholder="Search by city or town" />
             </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/bbLogo.png";
+import './LandingPage.css'
 
 const LandingPage = () => {
   return (

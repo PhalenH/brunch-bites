@@ -1,0 +1,70 @@
+.logo {
+    height: 450px;
+    width: 575px;
+    margin-top: 60px;
+  }
+
+  .home-header {
+    text-align: center;
+    background-color: rgb(82, 284, 202);
+    margin-bottom: 100px;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .login {
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    margin-right: 10px;
+    box-shadow: 4px 4px 10px rgb(70, 70, 70);
+  }
+
+  .signup {
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    margin-left: 10px;
+    box-shadow: 4px 4px 10px rgb(70, 70, 70);
+  }
+
+  .login-signup {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  .fade-in-text {
+    animation: fadeIn linear 3s;
+    -webkit-animation: fadeIn linear 3s;
+    -moz-animation: fadeIn linear 3s;
+    -o-animation: fadeIn linear 3s;
+    -ms-animation: fadeIn linear 3s;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

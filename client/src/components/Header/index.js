@@ -16,7 +16,7 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="" to="/me">
+              <Link className="" to="/profile/me">
                 View My Profile
               </Link>
               <button className="" onClick={logout}>

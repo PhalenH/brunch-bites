@@ -1,32 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_BRUNCH_SPOT_LIST } from "../../utils/queries";
+import { QUERY_BRUNCH_SPOT_LIST, QUERY_ME } from "../../utils/queries";
 import { ADD_TO_VISIT } from "../../utils/mutations";
 
 function SearchBar({ placeholder }) {
   const [gotResults, setGotResults] = useState("");
   const [wordEntered, setWordEntered] = useState("");
-  const [cardState, setCardState] = useState({
-    name: "",
-    location: "",
-    price: "",
-    url: "",
-    rating: "",
-    comment: "",
-  });
+
   // Set up mutation with an option to handle errors
   const [addToVisit, { error }] = useMutation(ADD_TO_VISIT);
 
+  const { loading: loading2, data: data2 } = useQuery(QUERY_ME);
+  const profile = data2?.me || {};
   const { loading, data } = useQuery(QUERY_BRUNCH_SPOT_LIST, {
     variables: { city: gotResults },
   });
 
   const filteredBrunchData = data?.brunchSpotList || [];
-  console.log(filteredBrunchData);
+  // console.log(filteredBrunchData);
   const handleFilter = (event) => {
     event.preventDefault();
     console.log(wordEntered);
@@ -34,16 +29,29 @@ function SearchBar({ placeholder }) {
   };
 
   // On click event, perform mutation and pass in card data object as arguments
-  const handleAddCard = async (event) => {
+  const handleAddCard = async (event, result) => {
     event.preventDefault();
     try {
+      console.log(result);
+      console.log(result.image_url);
+
       const { data } = await addToVisit({
-        variables: { ...cardState },
+        variables: {
+          profileId: profile._id,
+          name: result.name,
+          address1: result.location.address1,
+          city: result.location.city,
+          zip_code: result.location.zip_code,
+          state: result.location.state,
+          price: result.price,
+          url: result.url,
+          rating: result.rating,
+          image_url: result.image_url
+        },
       });
       console.log(JSON.stringify(data));
-      // window.location.reload();
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -82,40 +90,43 @@ function SearchBar({ placeholder }) {
       {filteredBrunchData.length !== 0 && (
         <div className="">
           {/* might need key after result */}
-          {filteredBrunchData.slice(0, 20).map((result) => {
-            return (
-              <form onClick={handleAddCard}>
-                <div key={result._id} className="">
+          {filteredBrunchData.slice(0, 20).map((result) => (
+            <div key={result._id} className="">
+              <form
+                onSubmit={(event) => {
+                  handleAddCard(event, result);
+                }}
+              >
+                <div className="">
                   <div className="">
-                    <h4 className="">
-                      {result.name} <br />
-                      <ul>
-                        <li>{result.location.address1}</li>
-                        <li>{result.location.city}</li>
-                        <li>{result.location.zip_code}</li>
-                        <li>{result.location.state}</li>
-                        <li>{result.price}</li>
-                        <li>{result.rating}</li>
-                      </ul>
-                    </h4>
-                    <a
-                      className=""
-                      href={`${result.url}`}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      View the yelp url.
-                    </a>
+                    <img src={result.image_url} alt="stock-img"></img>
+                    <h3>{result.name}</h3> <br />
+                    <section>
+                      <h4>{result.location.address1}</h4>
+                      <h4>{result.location.city}</h4>
+                      <h4>{result.location.zip_code}</h4>
+                      <h4>{result.location.state}</h4>
+                      <h4>{result.price}</h4>
+                      <h4>{result.rating}</h4>
+                    </section>
                   </div>
-                  <div className="">
-                    <button className="" type="submit">
-                      Add To you watch list
-                    </button>
-                  </div>
+                  <a
+                    className=""
+                    href={`${result.url}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    View the yelp url.
+                  </a>
+                </div>
+                <div className="">
+                  <button className="" type="submit">
+                    Add To you watch list
+                  </button>
                 </div>
               </form>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
     </div>
@@ -123,3 +134,15 @@ function SearchBar({ placeholder }) {
 }
 
 export default SearchBar;
+
+// const [cardState, setCardState] = useState({
+  //   name: "",
+  //   address1: "",
+  //   city: "",
+  //   zip_code: "",
+  //   state: "",
+  //   price: "",
+  //   url: "",
+  //   rating: "",
+  //   comment: "",
+  // });

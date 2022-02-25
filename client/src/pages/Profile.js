@@ -9,23 +9,16 @@ import VisitedList from "../components/VisitedList";
 
 import { QUERY_ME } from "../utils/queries";
 
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 
 const Profile = () => {
-  console.log(Auth.loggedIn());
-  // const cards = document.querySelectorAll(".card");
-  // function flipCard() {
-  //   console.log("IT WORKS LET'S GOOOOOOO");
-  //   this.classList.toggle("is-flipped");
-  // }
-
-  // cards.forEach((card) => card.addEventListener("click", flipCard));
-
+  
   // Check if data is returning from the `QUERY_ME` query
   const { loading, data } = useQuery(QUERY_ME);
-  console.log(data);
+  // console.log(data);
   const profile = data?.me || {};
-  console.log(profile);
+  // console.log(profile);
+  // console.log(profile.toVisitList);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -49,10 +42,12 @@ const Profile = () => {
       <div>
         <SearchBar searchbarResults={profile.SearchBar}/>
         <div>
-          <ToVisitList toVisitResults={profile.tovisit} />
+          To Visit:
+          <ToVisitList toVisitResults={profile.toVisitList} />
         </div>
         <div>
-          <VisitedList visitedResults={profile.visited} />
+          Visited:
+          <VisitedList visitedResults={profile.visitedList} />
         </div>
       </div>
     </section>
