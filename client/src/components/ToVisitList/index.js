@@ -129,7 +129,7 @@ const ToVisitList = ({ toVisitResults }) => {
                 <h5 className="card-title"> {toVisit.name}</h5>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Rating: {toVisit.price} Price: {toVisit.price}</li>
+                <li className="list-group-item">Rating: {toVisit.rating} Price: {toVisit.price}</li>
                 <li className="list-group-item">{toVisit.address1}, {toVisit.city}, {toVisit.state}, {toVisit.zip_code}</li>
                 <li className="list-group-item"> <a href={`${toVisit.url}`}>View the yelp url.</a></li>              
               </ul>
