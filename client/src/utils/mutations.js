@@ -54,12 +54,10 @@ export const ADD_TO_VISIT = gql`
       _id
       toVisitList {
         name
-        location {
-          address1
-          city
-          zip_code
-          state
-        }
+        address1
+        city
+        zip_code
+        state
         price
         url
         rating
@@ -102,12 +100,10 @@ export const ADD_VISITED = gql`
       _id
       visitedList {
         name
-        location {
-          address1
-          city
-          zip_code
-          state
-        }
+        address1
+        city
+        zip_code
+        state
         price
         url
         myRating

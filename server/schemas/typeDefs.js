@@ -17,7 +17,10 @@ const typeDefs = gql`
   type ToVisit {
     _id: ID
     name: String
-    location: Location
+    address1: String
+    city: String
+    zip_code: String
+    state: String
     price: String
     url: String
     rating: Float
@@ -28,12 +31,16 @@ const typeDefs = gql`
   type Visited {
     _id: ID
     name: String
-    location: Location
+    address1: String
+    city: String
+    zip_code: String
+    state: String
     price: String
     url: String
     myRating: Float
     comment: String
     dateVisited: String
+    image_url: String
   }
 
   type BrunchSpot {

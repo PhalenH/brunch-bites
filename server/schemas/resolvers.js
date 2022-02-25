@@ -180,13 +180,14 @@ const resolvers = {
           ).populate("places");
         }
         prof = prof.toObject();
+        toVisitList = await prof.places.filter((place) => place.visited === false)
+        console.log(toVisitList);
         return {
           ...prof,
           toVisitList: prof.places.filter((place) => place.visited === false),
           visitedList: prof.places.filter((place) => place.visited === true),
         };
       }
-      console.log(prof);
       throw new AuthenticationError("You need to be logged in!");
     },
 
