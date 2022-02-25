@@ -265,7 +265,7 @@ const resolvers = {
       if (context.user) {
         return await Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pullAll: { places: placeId } },
+          { $pullAll: { places: [placeId] } },
           { returnNewDocument: true }
         ).populate("places");
       }
@@ -275,7 +275,7 @@ const resolvers = {
       if (context.user) {
         return await Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pullAll: { places: placeId } },
+          { $pullAll: { places: [placeId] } },
           { returnNewDocument: true }
         ).populate("places");
       }
