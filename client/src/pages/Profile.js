@@ -4,7 +4,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import SearchBar from "../components/SearchBar";
 import Header from "../components/Header";
-import ToVisitList from "../components/ToVisitList";
+import ToVisitList from "../components/toVisitList";
 import VisitedList from "../components/VisitedList";
 
 import { QUERY_ME } from "../utils/queries";

@@ -5,13 +5,11 @@ img {
 
 /* style */
 .col-4 { color: #fff; padding-bottom: 18px; padding-top: 18px; }
-.col-4:nth-child(3n+1) { background: #9c6; } /*1st then every 3rd*/
-.col-4:nth-child(3n+2) { background: #9c6; } /*2nd then every 3rd*/
-.col-4:nth-child(3n+3) { background: #9c6; } /*3rd then every 3rd*/
 
 .card {
 max-width: 100%;
 white-space: normal;
+background: #D8FE55;
 }
 
 .card-title{
@@ -30,7 +28,7 @@ font-size: 20px
 }
 
 div.scrollmenu {
-background-color: #333;
+  background-color: rgb(82, 284, 202);
 overflow: hidden;
 white-space: nowrap;
 width: 1000px;
