@@ -157,10 +157,18 @@ a:hover {
 .url-button {
   border-radius: 20px;
   margin-bottom: 10px;
+  padding: 2px;
   background-color: white;
 }
 
 .brunchCard:hover {
   transform: scale(1.025, 1.025);
   box-shadow: 0px 0px 20px #fff;
+}
+.url-button:hover {
+    background-color: rgb(83, 248, 198);
+}
+
+@media screen and (max-width: 992px) {
+    
 }
