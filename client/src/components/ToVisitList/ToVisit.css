@@ -1,21 +1,28 @@
 .header-container {
   width: 95%;
   margin-left: 20px;
+  margin-top: 10px;
 }
 
-/* .header-container h3 {
+.header-container h3 {
   float: left;
 }
 
 .header-container .button-container {
   float: right;
-} */
+}
+
+#slideRight-ToVisit, #slideRight-Visited {
+  margin-left: 10px;
+}
 
 div.scrollmenu {
   background-color: #53F8C6;
   overflow: hidden;
   white-space: nowrap;
   margin-top: 40px;
+  width: 95%;
+  margin-left: 20px;
 }
 
 div.scrollmenu div {
@@ -87,9 +94,17 @@ div.scrollmenu div {
 
 .visited-remove {
   display: table;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 button {
   width: auto;
+}
+
+.brunch-card-visited {
+  background-color: #FE809B;
+  width: 35%;
+  white-space: normal;
+  box-shadow: 0px 0px 24px 6px rgba(0,0,0,0.73);
+  margin: 20px 20px;
 }
