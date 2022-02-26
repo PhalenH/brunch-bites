@@ -1,0 +1,60 @@
+.header-body {
+    background-color: rgb(83, 248, 198);
+    border-radius: 7px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: auto;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+p {
+    margin-top: 0px !important;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: grey 1px 1px;
+    margin-left: 70px;
+    margin-right: 160px;
+}
+
+.headerlogo {
+    width: 450px;
+    height: 100px;
+    
+}
+
+button {
+   /* margin-left: 500px; */
+   height: 50px;
+   width: 80px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 15px;
+   margin-bottom: 20px;
+}
+
+.container2 {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.ViewProfile {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.ProfileResultsBnt {
+    margin-right: 70px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var(--border-text);
+}

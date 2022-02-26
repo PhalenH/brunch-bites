@@ -28,7 +28,6 @@ const resolvers = {
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
- 
       if (context.user) {
         let prof = await Profile.findOne({ _id: context.user._id }).populate(
           "places"
@@ -68,7 +67,6 @@ const resolvers = {
 
     // how to set this up for searching by location
     brunchSpotList: async (parent, { city }) => {
- 
       const response = await axios({
         method: "get",
         url: `https://api.yelp.com/v3/businesses/search`,
@@ -85,7 +83,6 @@ const resolvers = {
       });
 
       const dataResponse = response.data.businesses;
-  
       return dataResponse.map((data) => ({
         _id: data.id,
         name: data.name,
@@ -93,6 +90,7 @@ const resolvers = {
         price: data.price,
         rating: data.rating,
         url: data.url,
+        image_url: data.image_url,
       }));
     },
   },
@@ -132,6 +130,7 @@ const resolvers = {
         url,
         rating,
         comment,
+        image_url,
       },
       context
     ) => {
@@ -146,8 +145,10 @@ const resolvers = {
           url,
           rating,
           comment,
+          image_url,
           visited: false,
         };
+        
         // if name doesn't exist it will create it, if it does exist it will update using the name as a filter
         let placeRecord = await Places.findOneAndUpdate(
           { name: name },
@@ -179,6 +180,8 @@ const resolvers = {
           ).populate("places");
         }
         prof = prof.toObject();
+        toVisitList = await prof.places.filter((place) => place.visited === false)
+        console.log(toVisitList);
         return {
           ...prof,
           toVisitList: prof.places.filter((place) => place.visited === false),
@@ -202,6 +205,7 @@ const resolvers = {
         myRating,
         comment,
         dateVisited,
+        image_url,
       },
       context
     ) => {
@@ -217,9 +221,10 @@ const resolvers = {
           myRating,
           comment,
           dateVisited,
+          image_url,
           visited: true,
         };
-       // if name doesn't exist it will create it, if it does exist it will update using the name as a filter
+        // if name doesn't exist it will create it, if it does exist it will update using the name as a filter
         let placeRecord = await Places.findOneAndUpdate(
           { name: name },
           { $set: { ...values } },
@@ -260,7 +265,7 @@ const resolvers = {
       if (context.user) {
         return await Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pullAll: { places: placeId } },
+          { $pullAll: { places: [placeId] } },
           { returnNewDocument: true }
         ).populate("places");
       }
@@ -270,7 +275,7 @@ const resolvers = {
       if (context.user) {
         return await Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pullAll: { places: placeId } },
+          { $pullAll: { places: [placeId] } },
           { returnNewDocument: true }
         ).populate("places");
       }
