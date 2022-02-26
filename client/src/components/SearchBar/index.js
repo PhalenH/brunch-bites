@@ -46,7 +46,7 @@ function SearchBar({ placeholder }) {
           price: result.price,
           url: result.url,
           rating: result.rating,
-          image_url: result.image_url
+          image_url: result.image_url,
         },
       });
       console.log(JSON.stringify(data));
@@ -68,7 +68,7 @@ function SearchBar({ placeholder }) {
   }
 
   return (
-    <div>
+    <div className="search-page-body">
       <form className="search" onSubmit={handleFilter}>
         <div className="searchInputs">
           {" "}
@@ -89,41 +89,45 @@ function SearchBar({ placeholder }) {
       </form>
       {filteredBrunchData.length !== 0 && (
         <div className="resultContainer">
-          {filteredBrunchData.slice(0, 20).map((result) => (
-            <div key={result._id} className="brunchCard">
-              <form
-                onSubmit={(event) => {
-                  handleAddCard(event, result);
-                }}
-              >
-                <div className="">
-                  <div className="">
-                    <img src={result.image_url} alt="stock-img"></img>
-                    <h3>{result.name}</h3> <br />
-                    <section>
-                      <p>{result.location.address1}</p>
-                      <p>{result.location.city}</p>
-                      <p>{result.location.zip_code}</p>
-                      <p>{result.location.state}</p>
-                      <p>{result.price}</p>
-                      <p>{result.rating}</p>
-                    </section>
-                  </div>
-                  <a
-                    className=""
-                    href={`${result.url}`}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    View the yelp url.
-                  </a>
+          {filteredBrunchData.slice(0, 21).map((result) => (
+            <div className="brunchCard" key={result._id}>
+              <img
+                className="brunch-image"
+                src={result.image_url}
+                alt="to-visit-brunch"
+              />
+              <div className="brunch-spot">
+                <div className="brunch-name">
+                  <h2 className=""> {result.name}</h2>
                 </div>
-                <div className="">
-                  <button className="" type="submit">
-                    Add To you watch list
+                <section className="brunch-info">
+                  <div className="price-rating">
+                    <h3 className="brunch-stat">Rating: {result.rating}</h3>
+                    <h3 className="brunch-stat">Price: {result.price}</h3>
+                  </div>
+                  <h3 className="brunch-location" id="h3-2">
+                    {result.location.address1}, {result.location.city},{" "}
+                    {result.location.state}, {result.location.zip_code}
+                  </h3>
+                </section>
+                <div className="button-div">
+                  <button className="url-button">
+                    <a href={`${result.url}`} rel="noreferrer" target="_blank">
+                      View Yelp Page
+                    </a>
+                  </button>
+                  <button
+                    type="button"
+                    className="url-button"
+                    onClick={(event) => {
+                      handleAddCard(event, result);
+                    }}
+                  >
+                    {" "}
+                    <i className="bi-xl bi-plus-square"></i> Add{" "}
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           ))}
         </div>
@@ -133,15 +137,38 @@ function SearchBar({ placeholder }) {
 }
 
 export default SearchBar;
-
-// const [cardState, setCardState] = useState({
-  //   name: "",
-  //   address1: "",
-  //   city: "",
-  //   zip_code: "",
-  //   state: "",
-  //   price: "",
-  //   url: "",
-  //   rating: "",
-  //   comment: "",
-  // });
+// <div key={result._id} className="brunchCard">
+// <form
+// onSubmit={(event) => {
+//   handleAddCard(event, result);
+// }}
+// >
+// <div className="">
+//   <div className="">
+//     <img src={result.image_url} alt="stock-img"></img>
+//     <h3>{result.name}</h3> <br />
+//     <section>
+//       <p>{result.location.address1}</p>
+//       <p>{result.location.city}</p>
+//       <p>{result.location.zip_code}</p>
+//       <p>{result.location.state}</p>
+//       <p>{result.price}</p>
+//       <p>{result.rating}</p>
+//     </section>
+//   </div>
+//   <a
+//     className=""
+//     href={`${result.url}`}
+//     rel="noreferrer"
+//     target="_blank"
+//   >
+//     View the yelp url.
+//   </a>
+// </div>
+// <div className="">
+//   <button className="" type="submit">
+//     Add To you watch list
+//   </button>
+// </div>
+// </form>
+// </div>
