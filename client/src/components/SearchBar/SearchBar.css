@@ -2,7 +2,7 @@
   background-color: rgb(83, 248, 198);
 }
 .searchInputs  {
-    margin: 50px auto;
+    margin: auto;
     position: relative;
     display: flex;
     align-items: center;
@@ -13,7 +13,6 @@
 .search input {
     background-color: white;  
     border: 2px solid #eee;
-    border-radius: 2px;
     padding: 5px 10px 5px 50px;
     font-size: 18px;
     line-height: 30px;
@@ -25,7 +24,7 @@
 .searchIcon {
     position: absolute;
     right: 40%;
-    top: 0;
+    top: 15px;
     font-size: 25px;
     height: 100%;
     display: flex;
