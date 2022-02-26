@@ -65,6 +65,7 @@ input {
 }
 .submit:hover {
   background: rgb(253, 84, 120);
+  color: white;
 }
 
 .sign-up-here {
