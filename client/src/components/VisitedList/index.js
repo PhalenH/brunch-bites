@@ -77,8 +77,8 @@ const VistedList = ({ visitedResults }) => {
     executeRating(ratingStars);
   };
 
-  if (!visitedResults) {
-    return <h3>You aint been nowhere</h3>;
+  if (visitedResults.length === 0) {
+    return <h3 className="blank-list">Get out there and eat some brunch!</h3>;
   }
   return (
     <div>

@@ -15,6 +15,7 @@ const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const profile = data?.me || {};
 
+  console.log(profile.toVisitList)
   if (loading) {
     return <div>Loading...</div>;
   }

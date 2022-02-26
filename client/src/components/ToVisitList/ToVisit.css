@@ -1,3 +1,11 @@
+.blank-list {
+  text-align: center;
+  margin-top: 25px;
+  background-color: white;
+  border-top: 5px solid #FE809B;
+  border-bottom: 5px solid #FE809B;
+  padding: 20px
+}
 .header-container {
   width: 95%;
   margin-left: 20px;
@@ -15,7 +23,7 @@
   border-left: 1px solid black;
   border-right: 1px solid black;;
   margin-bottom: 0px;
-  background-color: #FE809B;;
+  background-color: #FE809B;
   border-radius: 10px 10px 0px 0px;
   color: white;
 }

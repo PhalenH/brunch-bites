@@ -75,8 +75,8 @@ const ToVisitList = ({ toVisitResults }) => {
   };
 
 
-  if (!toVisitResults) {
-    return <h3>Add a place to view list</h3>;
+  if (toVisitResults.length === 0) {
+    return <h3 className="blank-list">Add a place to view list</h3>;
   }
   return (
     <div>
