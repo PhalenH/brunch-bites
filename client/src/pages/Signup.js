@@ -42,52 +42,48 @@ const Signup = () => {
 
   return (
     <main className="signup-background">
-        <div className="signup-page">
-          <h4 className="">Sign Up</h4>
-          <div className="">
-            {data ? (
-              <p>
-                Success!
-                <Redirect to="/profile/me" />;
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className=""
-                  placeholder="Your username"
-                  name="name"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className=""
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="submit"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+      <div className="signup-page">
+        <h4 className="">Sign Up</h4>
+        <div className="">
+          {data ? (
+            <Redirect to="/profile/me" />
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className=""
+                placeholder="Your username"
+                name="name"
+                type="text"
+                value={formState.name}
+                onChange={handleChange}
+              />
+              <input
+                className=""
+                placeholder="******"
+                name="password"
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button
+                className="submit"
+                style={{ cursor: "pointer" }}
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+          )}
 
-            {error && (
-              <div className="">
-                {error.message}
-              </div>
-            )}
-          </div>
-          <div className="sign-up-here">If you already have an account login <Link className="" to="/login">
-                HERE
-              </Link></div>
+          {error && <div className="error-message">{error.message}</div>}
         </div>
+        <div className="sign-up-here">
+          If you already have an account login{" "}
+          <Link className="" to="/login">
+            HERE
+          </Link>
+        </div>
+      </div>
     </main>
   );
 };

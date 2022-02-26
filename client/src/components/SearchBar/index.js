@@ -137,38 +137,3 @@ function SearchBar({ placeholder }) {
 }
 
 export default SearchBar;
-// <div key={result._id} className="brunchCard">
-// <form
-// onSubmit={(event) => {
-//   handleAddCard(event, result);
-// }}
-// >
-// <div className="">
-//   <div className="">
-//     <img src={result.image_url} alt="stock-img"></img>
-//     <h3>{result.name}</h3> <br />
-//     <section>
-//       <p>{result.location.address1}</p>
-//       <p>{result.location.city}</p>
-//       <p>{result.location.zip_code}</p>
-//       <p>{result.location.state}</p>
-//       <p>{result.price}</p>
-//       <p>{result.rating}</p>
-//     </section>
-//   </div>
-//   <a
-//     className=""
-//     href={`${result.url}`}
-//     rel="noreferrer"
-//     target="_blank"
-//   >
-//     View the yelp url.
-//   </a>
-// </div>
-// <div className="">
-//   <button className="" type="submit">
-//     Add To you watch list
-//   </button>
-// </div>
-// </form>
-// </div>
