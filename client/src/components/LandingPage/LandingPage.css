@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(82, 284, 202);
+}
 .logo {
     height: 450px;
     width: 575px;
@@ -6,37 +9,46 @@
 
   .home-header {
     text-align: center;
-    background-color: rgb(82, 284, 202);
     margin-bottom: 100px;
     height: 100vh;
     width: 100%;
   }
 
   .login {
-    padding: 8px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-size: 30px;
     margin-right: 10px;
     box-shadow: 4px 4px 10px rgb(70, 70, 70);
+    text-align: center;
+    margin-right: 25px;
+    width: 100px;
+    border-radius: 15px;
   }
 
   .signup {
-    padding: 8px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-size: 30px;
     margin-left: 10px;
     box-shadow: 4px 4px 10px rgb(70, 70, 70);
+    text-align: center;
+    width: 125px;
+    margin-left: 25px;
+    border-radius: 15px;
   }
 
-  .login-signup {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 30px;
+  .login-link:hover {
+    background: rgb(253, 84, 120);
   }
+  .signup:hover,
+  .login:hover{
+    background-color: rgb(253, 84, 120);
+  }
+
 
   .fade-in-text {
+    margin-top: 100px;
     animation: fadeIn linear 3s;
     -webkit-animation: fadeIn linear 3s;
     -moz-animation: fadeIn linear 3s;

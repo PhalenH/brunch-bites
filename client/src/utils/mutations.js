@@ -130,3 +130,11 @@ export const REMOVE_VISITED = gql`
     }
   }
 `;
+
+// export const MY_RATING = gql`
+// mutation myRating($profileId: ID!, $myRatingId: ID!) {
+//   myRating(profileId: $profileId, myRatingId: $myRatingId){
+//     _id
+//     name
+//   }
+// }`;

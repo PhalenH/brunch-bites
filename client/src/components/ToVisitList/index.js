@@ -125,6 +125,7 @@ const ToVisitList = ({ toVisitResults }) => {
                   <li><a href={`${toVisit.url}`}>View the yelp url.</a></li>
                 </ul>
               </section>
+
             </div>
           </div>
           ))}
