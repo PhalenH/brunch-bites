@@ -112,7 +112,12 @@ function SearchBar({ placeholder }) {
                 </section>
                 <div className="button-div">
                   <button className="url-button">
-                    <a href={`${result.url}`} rel="noreferrer" target="_blank">
+                    <a
+                      href={`${result.url}`}
+                      rel="noreferrer"
+                      target="_blank"
+                      className="yelp-btn"
+                    >
                       View Yelp Page
                     </a>
                   </button>
