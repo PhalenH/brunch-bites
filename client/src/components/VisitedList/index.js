@@ -118,8 +118,8 @@ const VistedList = ({ visitedResults }) => {
               </div>
               <section>
                 <ul className="brunch-info">
-                  <li>Rating: {visited.rating} Price: {visited.price}</li>
-                  <li><a href={`${visited.url}`}>View the yelp url.</a></li>
+                  <li>Price: {visited.price}</li>
+                  <li><button type="button" className="btn btn-dark"> <i class="bi bi-box-arrow-up-right"></i><a href={`${visited.url}`}> View the yelp url. </a> </button></li>
                 </ul>
               </section>
             </div>

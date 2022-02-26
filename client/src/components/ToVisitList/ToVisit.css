@@ -16,8 +16,11 @@
   margin-left: 10px;
 }
 
+#slideRight-ToVisit:hover, #slideLeft-ToVisit:hover, #slideRight-Visited:hover, #slideLeft-Visited:hover {
+  transform: translateY(-2%);
+}
+
 div.scrollmenu {
-  background-color: #53F8C6;
   overflow: hidden;
   white-space: nowrap;
   margin-top: 40px;
@@ -37,7 +40,7 @@ div.scrollmenu div {
   width: 35%;
   white-space: normal;
   box-shadow: 0px 0px 24px 6px rgba(0,0,0,0.73);
-  margin: 20px 20px;
+  margin: 30px 30px;
 }
 
 .to-visit-remove {
@@ -106,5 +109,5 @@ button {
   width: 35%;
   white-space: normal;
   box-shadow: 0px 0px 24px 6px rgba(0,0,0,0.73);
-  margin: 20px 20px;
+  margin: 30px 30px;
 }
