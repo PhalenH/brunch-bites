@@ -13,21 +13,24 @@
   }
 
   .login {
-    padding: 8px;
+    /* padding: 8px; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-size: 30px;
     margin-right: 10px;
     box-shadow: 4px 4px 10px rgb(70, 70, 70);
+    text-align: center;
   }
 
   .signup {
-    padding: 8px;
+    /* padding: 8px; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
     font-size: 30px;
     margin-left: 10px;
     box-shadow: 4px 4px 10px rgb(70, 70, 70);
+    text-align: center;
+    width: 100px;
   }
 
   .login-signup {
