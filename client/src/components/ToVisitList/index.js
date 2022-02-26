@@ -4,11 +4,10 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import { ADD_VISITED, REMOVE_TO_VISIT } from "../../utils/mutations";
 
-const styles = {
-  card: {
-    width: "18rem",
-  },
-};
+// fix cards so they are one uniform size
+// fix images so they are 50% of space taken up
+// fix internal and left right button styling
+// play with container styling so they are both uniform and no delays onclicks
 
 const ToVisitList = ({ toVisitResults }) => {
   // Set up mutation with an option to handle errors
@@ -82,6 +81,7 @@ const ToVisitList = ({ toVisitResults }) => {
   return (
     <div>
       <div className="container-To-Visit">
+        
         <div className="header-container">
           <h3>To Visit</h3>
           <div className="button-container">
@@ -108,31 +108,23 @@ const ToVisitList = ({ toVisitResults }) => {
 
         {toVisitResults &&
         toVisitResults.map((toVisit) => (
-          <div className="col-4" key={toVisit._id}>
-            <div className="card" style={styles.card}>
-              <div className="internal-button-container">
-                <button type="button" className="btn btn-dark" onClick={(event) => {handleAddVisited(event, toVisit);}}>
-                  {" "}
-                  <i className="bi bi-check-square"></i> Visited{" "}
-                </button>
-                <button type="button" className="btn btn-dark" onClick={(event) => {handleRemoveCard(event, toVisit);}}>
-                  {" "}
-                  <i className="bi bi-x-circle"></i> Remove{" "}
-                </button>
+          <div className="brunch-card-to-visit" key={toVisit._id}>
+            <div className="to-visit-internal-buttons">
+              <button type="button" className="to-visit-check btn btn-dark" onClick={(event) => {handleAddVisited(event, toVisit);}}>{" "}<i className="bi bi-check-circle"></i> Visited {" "} </button>
+              <button type="button" className="to-visit-remove btn btn-dark" onClick={(event) => {handleRemoveCard(event, toVisit);}}>{" "}<i className="bi bi-x-circle"></i> Let's Not {" "} </button>
+            </div>
+            <img className="brunch-image" src={toVisit.image_url} alt="to-visit-img"/>
+            <div>
+              <div className="restaurant-name">
+                <h1>{toVisit.name}</h1>
               </div>
-              <img
-                className="card-img-top"
-                src={toVisit.image_url}
-                alt="to-visit-brunch"
-              />
-              <div className="card-body">
-                <h5 className="card-title"> {toVisit.name}</h5>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Rating: {toVisit.price} Price: {toVisit.price}</li>
-                <li className="list-group-item">{toVisit.address1}, {toVisit.city}, {toVisit.state}, {toVisit.zip_code}</li>
-                <li className="list-group-item"> <a href={`${toVisit.url}`}>View the yelp url.</a></li>              
-              </ul>
+              <section>
+                <ul className="brunch-info">
+                  <li>Rating: {toVisit.rating} Price: {toVisit.price}</li>
+                  <li>{toVisit.address1}, {toVisit.city}, {toVisit.state}, {toVisit.zip_code}</li>
+                  <li><a href={`${toVisit.url}`}>View the yelp url.</a></li>
+                </ul>
+              </section>
             </div>
           </div>
           ))}
