@@ -19,7 +19,7 @@
 
 ## Description
 
-Brunch Bites is a react application designed to make life easier for anyone who enjoys or goes to brunch.
+Brunch Bites is a react application designed to make life easier for anyone who enjoys or goes to brunch. Brunch Bites is a new way to explore and discover the best breakfast/brunch restaurants in your area!  With a quick search for your city, you will find all the nearby restaurants that serve breakfast and brunch, along with their name, rating, price point, address, and the yelp link. You then have the option to add a restaurant to a list of places you want to visit or a list of places you have already visited.
 
 ## User-Story:
 
