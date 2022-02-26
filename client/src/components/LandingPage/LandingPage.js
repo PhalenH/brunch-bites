@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/bbLogo.png";
 import './LandingPage.css'
+import Footer from "../Footer";
 
 const LandingPage = () => {
   return (
@@ -22,7 +23,9 @@ const LandingPage = () => {
               </Link>
             </button>
           </div>
+          <Footer />
         </div>
+        
       </header>
     </main>
   );

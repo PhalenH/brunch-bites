@@ -83,7 +83,7 @@ function Login (props) {
 
             {error && <div className="">{error.message}</div>}
           </div>
-          <div className="sign-up-here">If you don't have an account sign up <Link className="" to="/signup">
+          <div className="sign-up-here">If you don't have an account sign up <Link className="here" to="/signup">
                 HERE
               </Link></div>
         </div>
