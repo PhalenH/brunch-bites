@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -53,10 +53,7 @@ function Login (props) {
           <h4 className="">Login <LoginIcon/> </h4>
           <div className="">
             {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/profile/me">back to the homepage.</Link>
-              </p>
+               <Redirect to="/profile/me" />
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <AccountCircleIcon/>
@@ -87,7 +84,7 @@ function Login (props) {
               </form>
             )}
 
-            {error && <div className="">{error.message}</div>}
+            {error && <div className="error-message">{error.message}</div>}
           </div>
           <div className="sign-up-here">If you don't have an account sign up <Link className="here" to="/signup">
                 HERE

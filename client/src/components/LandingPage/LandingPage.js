@@ -13,20 +13,19 @@ const LandingPage = () => {
         <div className="login-signup">
           <div className="fade-in-text">
             <button className="login">
-              <Link className="" to="/login">
+              <Link className="login-link" to="/login">
                 Login
               </Link>
             </button>
             <button className="signup">
-              <Link className="" to="/signup">
+              <Link className="login-link" to="/signup">
                 Signup
               </Link>
             </button>
           </div>
-          <Footer />
         </div>
-        
       </header>
+      <Footer />
     </main>
   );
 };

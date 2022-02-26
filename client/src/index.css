@@ -1,65 +1,13 @@
-
-/* .logo {
-  height: 450px;
-  width: 575px;
-  margin-top: 60px;
-} */
-
-/* .homepage-background {
-  background-color: blue;
-  height: 100vh;
-} */
-
-/* .home-header {
-  text-align: center;
-  background-color: rgb(82, 284, 202);
-  margin-bottom: 100px;
-  height: 100vh;
-  width: 100%;
-} */
-
 p {
   margin-top: 3px;
-  font-family: 'Courgette';
+  font-family: "Courgette";
 }
-
-/* .logo-name {
-  margin-bottom: 5px;
-  color: rgb(253, 84, 120);
-  border: 1px rgb(218, 254, 85);
-} */
 
 h1 {
-  
 }
-
-/* .login-signup {
-  text-align: center;
-  font-size: 40px;
-  margin-top: 30px;
-} */
-
-/* .login {
-  padding: 8px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-style: italic;
-  font-size: 30px;
-  margin-right: 10px;
-  box-shadow: 4px 4px 10px rgb(70, 70, 70);
-} */
-
-/* .signup {
-  padding: 8px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-style: italic;
-  font-size: 30px;
-  margin-left: 10px;
-  box-shadow: 4px 4px 10px rgb(70, 70, 70);
-} */
 
 h5 {
   margin-top: 30px;
-  
 }
 
 footer {
@@ -70,44 +18,6 @@ footer {
 form {
   text-align: center;
 }
-
-/* .homepage-container {
-  background-color: black;
-} */
-
-
-/* .fade-in-text {
-  animation: fadeIn linear 5s;
-  -webkit-animation: fadeIn linear 5s;
-  -moz-animation: fadeIn linear 5s;
-  -o-animation: fadeIn linear 5s;
-  -ms-animation: fadeIn linear 5s;
-}
-
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-} */
 
 .signup-page {
   padding-top: 170px;
@@ -153,12 +63,27 @@ input {
   font-size: 20px;
   border-radius: 7px;
 }
+.submit:hover {
+  background: rgb(253, 84, 120);
+}
 
 .sign-up-here {
   text-align: center;
   margin: auto;
   margin-top: 30px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 25px;
 }
 
+.error-message {
+  background-color: white;
+  margin: auto;
+  color: red;
+  text-align: center;
+  border: 5px solid black;
+  font-weight: bolder;
+  font-size: 35px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
