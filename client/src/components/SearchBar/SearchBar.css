@@ -1,83 +1,181 @@
-/* .search {
-
-} */
-
+.search {
+  background-color: rgb(84, 284, 202);
+  padding-bottom: 50px;
+}
 .searchInputs {
-    margin-top: 105px;
-    display: flex;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
 }
 
 .search input {
-    background-color: white;
-    border: 0;
-    border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    font-size: 18px;
-    padding: 15px;
-    height: 30px;
-    width: 300px;
+  background-color: white;
+  border: 2px solid #eee;
+  padding: 5px 10px 5px 50px;
+  font-size: 18px;
+  line-height: 30px;
+  outline: 0;
+  display: block;
+  width: 20%;
 }
 
 .searchIcon {
-    height: 60px;
-    width: 50px;
-    background-color: white;
-    display: grid;
-    place-items: center;
+  position: absolute;
+  right: 40%;
+  top: 0px;
+  font-size: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
-  .searchIcon svg {
-    font-size: 35px;
+.searchIcon svg {
+  font-size: 35px;
 }
 
 .dataResult {
-    margin-top: 5px;
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: hidden;
-    overflow-y: auto;
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .dataResult::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .dataResult .dataItem {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    color: black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
 .dataItem p {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-  a {
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
 a:hover {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 #clearBtn {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* ========================================================== */
 /* Result card styling */
 .resultContainer {
-    display: flex;
-    border: 2px solid red;
+  border-top: 10px solid #c69;
+  background-color: rgb(34, 33, 33);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  color: black;
 }
 
 .brunchCard {
-    border: 2px solid green;
+  border: 5px solid white;
+  box-shadow: 0px 0px 10px #fff;
+  border-radius: 10px;
+  width: 20%;
+  margin: 50px 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.brunch-image {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.brunch-spot {
+  background-color: #c69;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 50px;
+  /* align-items: center; */
+}
+
+.brunch-name {
+  text-align: center;
+  background-color: rgb(84, 284, 202);
+  height: 85px;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 5px;
+}
+
+.brunch-info {
+  margin-bottom: 10px;
+  padding-top: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+.brunch-stat {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.brunch-location {
+  font-size: 1em;
+  height: 45px;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-weight: bolder;
+}
+.price-rating {
+  display: flex;
+  width: 100%;
+  /* background-color: white; */
+  justify-content: space-around;
+}
+
+.button-div {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  bottom: 0px;
+}
+.url-button {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: auto;
+  padding: 0px 10px;
+}
+
+.brunchCard:hover {
+  transform: scale(1.025, 1.025);
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.url-button:hover,
+.yelp-btn:hover {
+  background-color: rgb(84, 284, 202);
+  transform: scale(1.05, 1.05);
 }

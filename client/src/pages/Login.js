@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+
+import LoginIcon from '@mui/icons-material/Login';
+import PasswordIcon from '@mui/icons-material/Password';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import Auth from "../utils/auth";
 
@@ -46,15 +50,13 @@ function Login (props) {
   return (
     <main className="login-background">
         <div className="login-page">
-          <h4 className="">Login</h4>
+          <h4 className="">Login <LoginIcon/> </h4>
           <div className="">
             {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/profile/me">back to the homepage.</Link>
-              </p>
+               <Redirect to="/profile/me" />
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <AccountCircleIcon/>
                 <input
                   className=""
                   placeholder="Your username"
@@ -63,6 +65,7 @@ function Login (props) {
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <PasswordIcon/>
                 <input
                   className=""
                   placeholder="******"
@@ -81,12 +84,13 @@ function Login (props) {
               </form>
             )}
 
-            {error && <div className="">{error.message}</div>}
+            {error && <div className="error-message">{error.message}</div>}
           </div>
-          <div className="sign-up-here">If you don't have an account sign up <Link className="" to="/signup">
+          <div className="sign-up-here">If you don't have an account sign up <Link className="here" to="/signup">
                 HERE
               </Link></div>
         </div>
+        
     </main>
   );
 };

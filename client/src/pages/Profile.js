@@ -4,10 +4,11 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import SearchBar from "../components/SearchBar";
 import Header from "../components/Header";
-import ToVisitList from "../components/toVisitList";
+import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
 
 import { QUERY_ME } from "../utils/queries";
+import Footer from "../components/Footer";
 
 const Profile = () => {
   // Check if data is returning from the `QUERY_ME` query
@@ -31,6 +32,7 @@ const Profile = () => {
   }
 
   return (
+    <>
     <section>
       <Header />
       <div>
@@ -42,6 +44,8 @@ const Profile = () => {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

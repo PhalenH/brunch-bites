@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
@@ -6,6 +7,7 @@ import SearchBar from "../components/SearchBar";
 const Results = () => {
 
   return (
+    <>
     <main>
       <div className="">
         <Header />
@@ -16,6 +18,8 @@ const Results = () => {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 };
 
