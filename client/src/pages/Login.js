@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
+import LoginIcon from '@mui/icons-material/Login';
+import PasswordIcon from '@mui/icons-material/Password';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import Auth from "../utils/auth";
 
 function Login (props) {
@@ -46,7 +50,7 @@ function Login (props) {
   return (
     <main className="login-background">
         <div className="login-page">
-          <h4 className="">Login</h4>
+          <h4 className="">Login <LoginIcon/> </h4>
           <div className="">
             {data ? (
               <p>
@@ -55,6 +59,7 @@ function Login (props) {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <AccountCircleIcon/>
                 <input
                   className=""
                   placeholder="Your username"
@@ -63,6 +68,7 @@ function Login (props) {
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <PasswordIcon/>
                 <input
                   className=""
                   placeholder="******"

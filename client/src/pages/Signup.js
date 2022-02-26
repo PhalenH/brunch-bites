@@ -5,6 +5,10 @@ import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_PROFILE } from "../utils/mutations";
 
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import PasswordIcon from '@mui/icons-material/Password';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -43,8 +47,8 @@ const Signup = () => {
   return (
     <main className="signup-background">
         <div className="signup-page">
-          <h4 className="">Sign Up</h4>
-          <div className="">
+          <h4 className="">Sign Up <PersonAddAltIcon/></h4>
+          <div className="form-input">
             {data ? (
               <p>
                 Success!
@@ -52,6 +56,7 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <AccountCircleIcon/>
                 <input
                   className=""
                   placeholder="Your username"
@@ -60,6 +65,7 @@ const Signup = () => {
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <PasswordIcon/>
                 <input
                   className=""
                   placeholder="******"
