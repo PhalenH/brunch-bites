@@ -57,8 +57,8 @@ Brunch Bites is a react application designed to make life easier for anyone who 
 - Christian: Assisted with external api call, created and styled search bar for search page. 
 
 
-# Checkout our github for further information on the application as well as our other work!
-# Feel free to reach out with questions, concerns, or just to chat at our respective emails
+### Checkout our github for further information on the application as well as our other work!
+### Feel free to reach out with questions, concerns, or just to chat at our respective emails
 
 Phalen:
 
