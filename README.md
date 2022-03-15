@@ -56,17 +56,20 @@ Brunch Bites is a react application designed to make life easier for anyone who 
   - Email Phalen at: phalenhazel@gmail.com
 
 
-- Sam: Created logo as well as created and styled each of landing page, loging/signup page, and footer for application. 
+- Sam: 
+  - Created logo as well as created and styled each of landing page, loging/signup page, and footer for application. 
   - [Sam's Github](https://github.com/kennedysam168)
   - Email Sam at: kennedysam168@gmail.com
 
 
-- Kieran: Created and styled profile page, created scrolling function for both lists on profile page. 
+- Kieran: 
+  - Created and styled profile page, created scrolling function for both lists on profile page. 
   - [Kieran's Github](https://github.com/kieranh971)
   - Email Kieran at: kharris19063@gmail.com
 
 
-- Christian: Assisted with external api call, created and styled search bar for search page. 
+- Christian: 
+  - Assisted with external api call, created and styled search bar for search page. 
   - [Christian's Github](https://github.com/ChristianAnti)
   - Email Christian at: christian.gleason416@gmail.com
 
