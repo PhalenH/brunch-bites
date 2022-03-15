@@ -53,13 +53,19 @@ Brunch Bites is a react application designed to make life easier for anyone who 
   - Server side - Created models (including password hashing), server.js file and setup, heroku deployment, mongoDB atlas setup, auth files with JWT, all schema work including resolvers and typeDefs for external api call as well as user interaction  through queries and mutations.
   - Client side - Primary contributor for utils folder including auth file as well as mutations/queries files to work with back-end functionality. Primary contributor for creating search page and styling of page. Also styled header and buttons on profile/login/signup page.
   - [Phalen's Github](https://github.com/PhalenH)
-  - Email Phalen at: pchaze@yahoo.com
+  - Email Phalen at: phalenhazel@gmail.com
+
+
 - Sam: Created logo as well as created and styled each of landing page, loging/signup page, and footer for application. 
   - [Sam's Github](https://github.com/kennedysam168)
   - Email Sam at: kennedysam168@gmail.com
+
+
 - Kieran: Created and styled profile page, created scrolling function for both lists on profile page. 
   - [Kieran's Github](https://github.com/kieranh971)
   - Email Kieran at: kharris19063@gmail.com
+
+
 - Christian: Assisted with external api call, created and styled search bar for search page. 
   - [Christian's Github](https://github.com/ChristianAnti)
   - Email Christian at: christian.gleason416@gmail.com
