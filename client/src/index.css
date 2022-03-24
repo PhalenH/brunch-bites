@@ -76,6 +76,12 @@ input {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 25px;
 }
+.here {
+  border: 2px solid rgb(253, 84, 120);
+  background-color: white;
+  border-radius: 7px;
+  padding: 3px;
+}
 
 .error-message {
   background-color: white;
