@@ -113,7 +113,7 @@ a:hover {
   width: 100%;
   justify-content: center;
   padding-bottom: 50px;
-  /* align-items: center; */
+
 }
 
 .brunch-name {
@@ -150,7 +150,6 @@ a:hover {
 .price-rating {
   display: flex;
   width: 100%;
-  /* background-color: white; */
   justify-content: space-around;
 }
 
