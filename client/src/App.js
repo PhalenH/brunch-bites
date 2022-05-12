@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import Results from "./pages/Results";
+import Error from "./pages/Error";
 
 
 const httpLink = createHttpLink({
@@ -62,6 +63,10 @@ function App() {
 
             <Route exact path="/profile/me">
               <Profile />
+            </Route>
+
+            <Route exact path="/*">
+              <Error />
             </Route>
            
           </div>
