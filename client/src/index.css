@@ -63,7 +63,8 @@ input {
   font-size: 20px;
   border-radius: 7px;
 }
-.submit:hover {
+.submit:hover,
+.here:hover {
   background: rgb(253, 84, 120);
   color: white;
 }
@@ -87,4 +88,21 @@ input {
   position: absolute;
   top: 0px;
   width: 100%;
+}
+.here {
+  box-shadow: 2px 2px 8px grey;
+  border-radius: 7px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 480px)  {
+  .login-user-input {
+    width: 450px;
+  }
+  .sign-up-here {
+    width: 85%;
+  }
 }

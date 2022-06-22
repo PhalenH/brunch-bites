@@ -58,7 +58,7 @@ function Login (props) {
               <form onSubmit={handleFormSubmit}>
                 <AccountCircleIcon/>
                 <input
-                  className=""
+                  className="login-user-input"
                   placeholder="Your username"
                   name="name"
                   type="text"
@@ -67,7 +67,7 @@ function Login (props) {
                 />
                 <PasswordIcon/>
                 <input
-                  className=""
+                  className="login-user-input"
                   placeholder="******"
                   name="password"
                   type="password"

@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Results from "./pages/Results";
 
 
