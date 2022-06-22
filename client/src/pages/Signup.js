@@ -45,6 +45,7 @@ const Signup = () => {
   };
 
   return (
+    <>
     <main className="signup-background">
         <div className="signup-page">
           <h4 className="">Sign Up <PersonAddAltIcon/></h4>
@@ -94,6 +95,8 @@ const Signup = () => {
         </div>
       </div>
     </main>
+    
+    </>
   );
 };
 

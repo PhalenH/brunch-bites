@@ -5,11 +5,6 @@ import { REMOVE_VISITED } from "../../utils/mutations";
 import "./Visited.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const styles = {
-  card: {
-    width: "18rem",
-  },
-};
 
 const VistedList = ({ visitedResults }) => {
   // Set up mutation with an option to handle errors
@@ -82,8 +77,8 @@ const VistedList = ({ visitedResults }) => {
     executeRating(ratingStars);
   };
 
-  if (!visitedResults) {
-    return <h3>You aint been nowhere</h3>;
+  if (visitedResults.length === 0) {
+    return <h3 className="blank-list">Get out there and eat some brunch!</h3>;
   }
   return (
     <div>
@@ -95,7 +90,6 @@ const VistedList = ({ visitedResults }) => {
               className="bi bi-arrow-left-circle"
               onClick={handleButtonLeft}
             ></i>
-            Left
           </button>
           <button
             type="button"
@@ -106,7 +100,6 @@ const VistedList = ({ visitedResults }) => {
               className="bi bi-arrow-right-circle"
               onClick={handleButtonRight}
             ></i>
-            Right
           </button>
         </div>
       </div>
@@ -114,43 +107,23 @@ const VistedList = ({ visitedResults }) => {
       <div className="scrollmenu" id="container-visited">
         {visitedResults &&
           visitedResults.map((visited) => (
-            <div className="col-4" key={visited._id}>
-              <div className="card" style={styles.card}>
-                <div className="card-body">
-                  <button type="button" className="btn btn-dark" onClick={(event) => {handleRemoveVisited(event, visited);}}>
-                    <i className="bi bi-x-circle"></i> Remove{" "}
-                  </button>
-                </div>
-                <img
-                  className="card-img-top"
-                  src={visited.image_url}
-                  alt="brunch-card-img"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{visited.name}</h5>
-                  <h5>
-                    {" "}
-                    <a className="card-title" href={`${visited.url}`}>
-                      View the yelp url.
-                    </a>
-                  </h5>
-                </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">
-                    {" "}
-                    Personal Rating:
-                    <div className="rating" onClick={starRating}>
-                      <span className="rating_result"></span>
-                      <i className="rating_star bi bi-star"></i>
-                      <i className="rating_star bi bi-star"></i>
-                      <i className="rating_star bi bi-star"></i>
-                      <i className="rating_star bi bi-star"></i>
-                      <i className="rating_star bi bi-star"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <div className="brunch-card-visited" key={visited._id}>
+            <div className="visited-internal-buttons">
+              <button type="button" className="visited-remove btn btn-dark" onClick={(event) => {handleRemoveVisited(event, visited);}}>{" "}<i className="bi bi-x-circle"></i> Remove {" "} </button>
             </div>
+            <img className="brunch-image" src={visited.image_url} alt="visited-img"/>
+            <div>
+              <div className="restaurant-name">
+                <h1>{visited.name}</h1>
+              </div>
+              <section>
+                <ul className="brunch-info">
+                  <li>Price: {visited.price}</li>
+                  <li><button type="button" className="btn btn-dark"> <i class="bi bi-box-arrow-up-right"></i><a href={`${visited.url}`}> View the yelp url. </a> </button></li>
+                </ul>
+              </section>
+            </div>
+          </div>
           ))}
       </div>
     </div>

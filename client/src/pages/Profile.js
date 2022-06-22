@@ -8,12 +8,14 @@ import ToVisitList from "../components/ToVisitList";
 import VisitedList from "../components/VisitedList";
 
 import { QUERY_ME } from "../utils/queries";
+import Footer from "../components/Footer";
 
 const Profile = () => {
   // Check if data is returning from the `QUERY_ME` query
   const { loading, data } = useQuery(QUERY_ME);
   const profile = data?.me || {};
 
+  console.log(profile.toVisitList)
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -31,6 +33,7 @@ const Profile = () => {
   }
 
   return (
+    <>
     <section>
       <Header />
       <div>
@@ -42,6 +45,8 @@ const Profile = () => {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

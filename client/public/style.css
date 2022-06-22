@@ -15,9 +15,7 @@ img {
     background-color: #40EAC4;
 }
 
-/* h1 {
-    text-align: center;
-} */
+
 
 #searchDiv {
     border-top: rgba(0,0,0,.7) 1px solid;
@@ -26,9 +24,7 @@ img {
     justify-content: center;
 }
 
-/* #userVisits {
-    border: black 3px solid;
-} */
+
 
 #containerToVisit {
     border-right: rgba(0,0,0,.7) .5px solid;
@@ -59,11 +55,9 @@ ul {
 
 
 .scene {
-/* width: 400px; */
 height: 400px;
 border: 1px solid black;
 margin: 40px 0;
-/* perspective: 600px; */
 box-shadow: 5px 5px 28px 9px rgba(0,0,0,0.52);
 }
 
@@ -105,7 +99,6 @@ transform: rotateY(180deg);
 }
 
 .rating {
-    /* position: relative; */
     width: 360px;
     background: transparent;
     display: flex;

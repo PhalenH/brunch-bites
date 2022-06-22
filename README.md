@@ -19,7 +19,7 @@
 
 ## Description
 
-Brunch Bites is a react application designed to make life easier for anyone who enjoys or goes to brunch.
+Brunch Bites is a react application designed to make life easier for anyone who enjoys or goes to brunch. Brunch Bites is a new way to explore and discover the best breakfast/brunch restaurants in your area!  With a quick search for your city, you will find all the nearby restaurants that serve breakfast and brunch, along with their name, rating, price point, address, and the yelp link. You then have the option to add a restaurant to a list of places you want to visit or a list of places you have already visited.
 
 ## User-Story:
 
@@ -49,26 +49,30 @@ Brunch Bites is a react application designed to make life easier for anyone who 
 - BootStrap
 
 ## Contributors
+- Phalen: 
+  - Server side - Created models (including password hashing), server.js file and setup, heroku deployment, mongoDB atlas setup, auth files with JWT, all schema work including resolvers and typeDefs for external api call as well as user interaction  through queries and mutations.
+  - Client side - Primary contributor for utils folder including auth file as well as mutations/queries files to work with back-end functionality. Primary contributor for creating search page and styling of page. Also styled header and buttons on profile/login/signup page.
+  - [Phalen's Github](https://github.com/PhalenH)
+  - Email Phalen at: phalenhazel@gmail.com
 
-- Checkout our github for further information on the application as well as our other work!
-- Feel free to reach out with questions, concerns, or just to chat at our respective emails
 
-Phalen:
+- Sam: 
+  - Created logo as well as created and styled each of landing page, loging/signup page, and footer for application. 
+  - [Sam's Github](https://github.com/kennedysam168)
+  - Email Sam at: kennedysam168@gmail.com
 
-- [Phalen's Github](https://github.com/PhalenH)
-- Email Phalen at: pchaze@yahoo.com
 
-Sam Kennedy:
+- Kieran: 
+  - Created and styled profile page, created scrolling function for both lists on profile page. 
+  - [Kieran's Github](https://github.com/kieranh971)
+  - Email Kieran at: kharris19063@gmail.com
 
-- [Sam's Github](https://github.com/kennedysam168)
-- Email Sam at: kennedysam168@gmail.com
 
-Kieran Harris:
+- Christian: 
+  - Assisted with external api call, created and styled search bar for search page. 
+  - [Christian's Github](https://github.com/ChristianAnti)
+  - Email Christian at: christian.gleason416@gmail.com
 
-- [Kieran's Github](https://github.com/kieranh971)
-- Email Kieran at: kharris19063@gmail.com
 
-Christian Gleason:
-
-- [Christian's Github](https://github.com/ChristianAnti)
-- Email Christian at: christian.gleason416@gmail.com
+### Checkout our github for further information on the application as well as our other work!
+### Feel free to reach out with questions, concerns, or just to chat at our respective emails
