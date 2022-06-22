@@ -122,7 +122,7 @@ const ToVisitList = ({ toVisitResults }) => {
                 <ul className="brunch-info">
                   <li>Rating: {toVisit.rating} Price: {toVisit.price}</li>
                   <li>{toVisit.address1}, {toVisit.city}, {toVisit.state}, {toVisit.zip_code}</li>
-                  <li><button type="button" className="btn btn-dark"> <i class="bi bi-box-arrow-up-right"></i><a href={`${toVisit.url}`}> View the yelp url. </a> </button></li>
+                  <li><button type="button" className="btn btn-dark"> <i className="bi bi-box-arrow-up-right"></i><a href={`${toVisit.url}`}> View the yelp url. </a> </button></li>
                 </ul>
               </section>
 

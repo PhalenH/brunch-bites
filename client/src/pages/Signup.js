@@ -59,7 +59,7 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <AccountCircleIcon/>
                 <input
-                  className=""
+                  className="login-user-input"
                   placeholder="Your username"
                   name="name"
                   type="text"
@@ -68,7 +68,7 @@ const Signup = () => {
                 />
                 <PasswordIcon/>
                 <input
-                  className=""
+                  className="login-user-input"
                   placeholder="******"
                   name="password"
                   type="password"
