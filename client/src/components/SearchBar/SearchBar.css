@@ -163,6 +163,7 @@ a:hover {
 .url-button {
   border-radius: 20px;
   margin-bottom: 10px;
+  padding: 2px;
   background-color: white;
   width: auto;
   padding: 0px 10px;
@@ -178,3 +179,4 @@ a:hover {
   background-color: rgb(84, 284, 202);
   transform: scale(1.05, 1.05);
 }
+
