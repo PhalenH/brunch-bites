@@ -65,9 +65,9 @@ function App() {
               <Profile />
             </Route>
 
-            <Route exact path="/*">
+            {/* <Route exact path="*">
               <Error />
-            </Route>
+            </Route> */}
            
           </div>
     
